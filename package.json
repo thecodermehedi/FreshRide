@@ -1,9 +1,13 @@
 {
   "name": "car-washing-booking-system",
   "version": "1.0.0",
-  "repository": {
-    "url": "https://github.com/thecodermehedi/car-washing-booking-system"
+  "description": "Car Wash Booking System Backend built with Typescript, Express, Mongoose",
+  "homepage": "https://github.com/thecodermehedi/car-washing-booking-system#readme",
+  "bugs": {
+    "url": "https://github.com/thecodermehedi/car-washing-booking-system/issues",
+    "email": "thecodermehedi@gmail.com"
   },
+  "license": "MIT",
   "author": {
     "name": "Mehedi Hasan",
     "email": "thecodermehedi@gmail.com",
@@ -11,10 +15,20 @@
   },
   "module": "src/index.ts",
   "type": "module",
-  "packageManager": "bun@1.1.24",
-  "license": "MIT",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodermehedi/car-washing-booking-system.git"
+  },
   "engines": {
     "node": "20.16.0"
+  },
+  "scripts": {
+    "build": "bun build src/* --outdir ./build",
+    "start": "bun run build && node build/index.js",
+    "dev": "bun run src/index.ts --watch",
+    "lint": "bunx eslint src",
+    "prettier": "bunx prettier --write src"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -25,9 +39,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.3",
     "zod": "^3.23.8"
-  },
-  "peerDependencies": {
-    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -43,5 +54,8 @@
     "globals": "^15.9.0",
     "morgan": "^1.10.0",
     "prettier": "^3.3.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
   }
 }

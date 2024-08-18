@@ -24,11 +24,11 @@
     "node": "20.16.0"
   },
   "scripts": {
-    "build": "bun build src/* --outdir ./build",
-    "start": "bun run build && node build/index.js",
-    "dev": "bun run src/index.ts --watch",
-    "lint": "bunx eslint src",
-    "prettier": "bunx prettier --write src"
+    "build": "bun build src/index.ts --outdir ./build",
+    "start": "node build/index.js",
+    "dev": "bun src/index.ts --watch",
+    "lint": "bunx eslint 'src/**/*.ts'",
+    "format": "bunx prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

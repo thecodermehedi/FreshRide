@@ -1,12 +1,7 @@
+![Assignment-3](https://t4.ftcdn.net/jpg/03/06/88/29/360_F_306882952_XYkVbLIWubBrEyg5vvjcKisffe8CsuZG.jpg)
 
-﻿![Assignment-3](https://t4.ftcdn.net/jpg/03/06/88/29/360_F_306882952_XYkVbLIWubBrEyg5vvjcKisffe8CsuZG.jpg)
-
-<h1 align="center">
-  Assignment 3 🚀
-</h1>
-<p align="center">
-  (Batch-3)
-</p>
+# Assignment 3 🚀
+<p align="center">(Batch-3)</p>
 
 🎉 **Welcome to Assignment 3 !!**
 
@@ -31,7 +26,7 @@
 - Submit a well-documented codebase with clear comments.
 - Make sure to add a README file that explains how to set up and use the application. In the README, include details like the project name, live URL, features, technology used, and other important information. Try to make it look professional by doing some research and making it appealing.
 
-## What You Need to Provide:
+## What You Need to Provide
 
 1. Live Deployment Link (Server)
 
@@ -39,11 +34,12 @@
 
 3. Project Overview Video. (A brief video providing an overview of the project.)
 
-
 ## Assignment
+
 # Car Wash Booking  System
 
 ## Story
+
 In a small town, there was a car wash run by an old man named Mr. Joe. People said his car wash had a special power – it made dreams come true.
 
 One sunny day, a little girl named Lily visited the car wash with her dad. Lily had a big dream of becoming an artist, but she was shy and unsure if she was any good.
@@ -60,52 +56,51 @@ And whenever she passed by the magic car wash, now run by Mr. Joe's grandchildre
 
 ---
 
-
 You have been assigned the task of building the backend for a Car Washing System. The main focus of this assignment is to implement Error Handling, CRUD operations, Authentication & Authorization, Transaction & Rollback (If necessary)
 
 ## **Technology Stack:**
 
-*   Use TypeScript as the programming language.
-*   Use Express.js as the web framework.
-*   Use Mongoose as the Object Data Modeling (ODM) and validation library for MongoDB
+- Use TypeScript as the programming language.
+- Use Express.js as the web framework.
+- Use Mongoose as the Object Data Modeling (ODM) and validation library for MongoDB
 
 ## Main Part: (50 Marks)
 
 ### User Model
 
-*   `name`: Full name of the user.
-*   `email`: Email address used for communication and login.
-*   `password`: Securely hashed password for authentication.
-*   `phone`: Contact phone number for notifications and updates.
-*   `role`**:** The role of the user, which can be one of the following: `admin`, `user`.
-*   `address`: Complete physical address for service delivery or correspondence.
+- `name`: Full name of the user.
+- `email`: Email address used for communication and login.
+- `password`: Securely hashed password for authentication.
+- `phone`: Contact phone number for notifications and updates.
+- `role`**:** The role of the user, which can be one of the following: `admin`, `user`.
+- `address`: Complete physical address for service delivery or correspondence.
 
 ### Service Model
 
-*   `name`: Title of the service.
-*   `description`: Brief description of what the service entails.
-*   `price`: Cost of the service in the local currency.
-*   `duration`**:** Duration of the service in minutes.
-*   `isDeleted`: Indicates whether the service is marked as deleted (false means it is not deleted).
+- `name`: Title of the service.
+- `description`: Brief description of what the service entails.
+- `price`: Cost of the service in the local currency.
+- `duration`**:** Duration of the service in minutes.
+- `isDeleted`: Indicates whether the service is marked as deleted (false means it is not deleted).
 
 ### Slot Model
 
-*   `service`: Reference to the specific service being booked.
-*   `date`: Date of the booking.
-*   `startTime`: Start time of the slot.
-*   `endTime`: Approximate end time of the slot.
-*   `isBooked`: Status of the slot (available, booked, canceled).
+- `service`: Reference to the specific service being booked.
+- `date`: Date of the booking.
+- `startTime`: Start time of the slot.
+- `endTime`: Approximate end time of the slot.
+- `isBooked`: Status of the slot (available, booked, canceled).
 
 ### Booking Model
 
-*   `customer`: Reference to the user who made the booking.
-*   `service`: Reference to the booked service.
-*   `slot`: Reference to the booking slot.
-*   `vehicleType`: Type of the vehicle (enum: `car`, `truck`, `SUV`, `van`, `motorcycle`, `bus`, `electricVehicle`, `hybridVehicle`, `bicycle`, `tractor`).
-*   `vehicleBrand`: Brand or manufacturer of the vehicle.
-*   `vehicleModel`: Model or variant of the vehicle.
-*   `manufacturingYear`: Manufacturing year of the vehicle.
-*   `registrationPlate`: Unique registration number assigned to the vehicle.
+- `customer`: Reference to the user who made the booking.
+- `service`: Reference to the booked service.
+- `slot`: Reference to the booking slot.
+- `vehicleType`: Type of the vehicle (enum: `car`, `truck`, `SUV`, `van`, `motorcycle`, `bus`, `electricVehicle`, `hybridVehicle`, `bicycle`, `tractor`).
+- `vehicleBrand`: Brand or manufacturer of the vehicle.
+- `vehicleModel`: Model or variant of the vehicle.
+- `manufacturingYear`: Manufacturing year of the vehicle.
+- `registrationPlate`: Unique registration number assigned to the vehicle.
 
 ## API Endpoints
 
@@ -148,8 +143,6 @@ You have been assigned the task of building the backend for a Car Washing System
 }
 ```
 
-###
-
 ### 2\. User Login
 
 **Route**: `/api/auth/login`(**POST**)
@@ -162,8 +155,6 @@ You have been assigned the task of building the backend for a Car Washing System
     "password": "ph-password",
 }
 ```
-
-
 
 **Response:**
 
@@ -185,8 +176,6 @@ You have been assigned the task of building the backend for a Car Washing System
     }
 }
 ```
-
-###
 
 ### **3\. Create Service (Only Accessible by Admin)**
 
@@ -234,8 +223,6 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 }
 ```
 
-###
-
 ### **4\. Get a Service**
 
 **Route:** `/api/services/:id`(**GET**)
@@ -259,8 +246,6 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
     }
 }
 ```
-
-
 
 ### **5\. Get All Services**
 
@@ -308,8 +293,6 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 }
 ```
 
-
-
 ### **6\. Update Services (Only Accessible by Admin)**
 
 **Route:** `/api/services/:id`(**PUT**)
@@ -352,8 +335,6 @@ You must include "Bearer" at the beginning of the token!
 }
 ```
 
-
-
 ### **7\. Delete a Service (Only Accessible by Admin)**
 
 **Route:** `/api/services/:id`(**DELETE**) \[SOFT DELETE \]
@@ -387,8 +368,6 @@ You must include "Bearer" at the beginning of the token!
     }
 }
 ```
-
-
 
 ### 8.**Create Slot (Only Accessible by Admin)**
 
@@ -477,44 +456,38 @@ You must include "Bearer" at the beginning of the token!
 }
 ```
 
-
-
 ### **Hints for creating slots:**
-
-
 
 1. **Retrieve Service Duration**: Assume the service duration is provided or retrieved from the database. For this example, we'll use a service duration of 60 minutes.
 2. **Parse Request Body**: Extract the necessary information from the request body:
-    *   Start time: "09:00"
-    *   End time: "14:00"
-    *   Service duration: 60 minutes
+    - Start time: "09:00"
+    - End time: "14:00"
+    - Service duration: 60 minutes
 3. **Calculate the Total Duration**:
-    *   Convert the start time and end time to minutes.
-    *   Calculate the total duration between the start and end times in minutes.
+    - Convert the start time and end time to minutes.
+    - Calculate the total duration between the start and end times in minutes.
 4. **Generate Slot Time Intervals**:
-    *   Determine the number of slots by dividing the total duration by the service duration.
-    *   Generate start and end times for each slot.
+    - Determine the number of slots by dividing the total duration by the service duration.
+    - Generate start and end times for each slot.
 5. **Example Calculation**
     1. **Step-by-Step Breakdown**:
     2. **Service Duration**: 60 minutes
     3. **Start Time and End Time**:
-        *   Start Time: "09:00"
-        *   End Time: "14:00"
+        - Start Time: "09:00"
+        - End Time: "14:00"
     4. **Convert Times to Minutes**:
-        *   "09:00" → 9 \* 60 = 540 minutes.
-        *   "14:00" → 14 \* 60 = 840 minutes.
+        - "09:00" → 9 \* 60 = 540 minutes.
+        - "14:00" → 14 \* 60 = 840 minutes.
     5. **Calculate Total Duration**:
-        *   Total Duration: 840 minutes - 540 minutes = 300 minutes
+        - Total Duration: 840 minutes - 540 minutes = 300 minutes
     6. **Number of Slots**:
-        *   Number of Slots: 300 minutes / 60 minutes per slot = 5 slots
+        - Number of Slots: 300 minutes / 60 minutes per slot = 5 slots
     7. **Generate Slot Time Intervals**:
-        *   Slot 1: Start Time: "09:00", End Time: "10:00"
-        *   Slot 2: Start Time: "10:00", End Time: "11:00"
-        *   Slot 3: Start Time: "11:00", End Time: "12:00"
-        *   Slot 4: Start Time: "12:00", End Time: "13:00"
-        *   Slot 5: Start Time: "13:00", End Time: "14:00"
-
-
+        - Slot 1: Start Time: "09:00", End Time: "10:00"
+        - Slot 2: Start Time: "10:00", End Time: "11:00"
+        - Slot 3: Start Time: "11:00", End Time: "12:00"
+        - Slot 4: Start Time: "12:00", End Time: "13:00"
+        - Slot 5: Start Time: "13:00", End Time: "14:00"
 
 ### **9\. Get available slots**
 
@@ -522,18 +495,14 @@ You must include "Bearer" at the beginning of the token!
 
 **Query Parameters:**
 
-*   `date`: (Optional) The specific date for which available slots are requested (format: YYYY-MM-DD).
-*   `serviceId`: (Optional) ID of the service for which available slots are requested.
-
-
+- `date`: (Optional) The specific date for which available slots are requested (format: YYYY-MM-DD).
+- `serviceId`: (Optional) ID of the service for which available slots are requested.
 
 **Request Example:**
 
 ```plain
   GET /api/slots/availability?date=2024-06-15&serviceId=60d9c4e4f3b4b544b8b8d1c5
 ```
-
-
 
 **Response:**
 
@@ -584,8 +553,6 @@ You must include "Bearer" at the beginning of the token!
     ]
 }
 ```
-
-
 
 ### **10\. Book a Service (Only Accessible by User)**
 
@@ -657,8 +624,6 @@ You must include "Bearer" at the beginning of the token!
     }
 }
 ```
-
-
 
 ### **11\. Get All Bookings (Only Accessible by Admin)**
 
@@ -756,8 +721,6 @@ You must include "Bearer" at the beginning of the token!
 }
 ```
 
-
-
 ### **12\. Get User's Bookings (Only Accessible by User)**
 
 **Route:** `/api/my-bookings`(**GET**)
@@ -812,7 +775,7 @@ You must include "Bearer" at the beginning of the token!
 }
 ```
 
-## Bonus Part:
+## Bonus Part
 
 ### **1\. No Data Found:**
 
@@ -831,18 +794,14 @@ When retrieving data, if the database collection is empty or no matching data is
 
 Implement proper error handling throughout the application. Use global error handling `middleware` to catch and handle errors, providing appropriate error responses with error messages.
 
-
-
 **Error Response Object Should include the following properties:**
 
-*   success → false
-*   message → Error Type → Validation Error, Cast Error, Duplicate Entry
-*   errorMessages
-*   stack
+- success → false
+- message → Error Type → Validation Error, Cast Error, Duplicate Entry
+- errorMessages
+- stack
 
-
-
-**Sample Error Response**
+### Sample Error Response
 
 ```swift
    {
@@ -858,8 +817,6 @@ Implement proper error handling throughout the application. Use global error han
 }
 ```
 
-###
-
 ### **3\. Not Found Route:**
 
 Implement a global "Not Found" handler for unmatched routes. When a route is not found, respond with a generic message: "Not Found.”
@@ -871,6 +828,7 @@ Implement a global "Not Found" handler for unmatched routes. When a route is not
   "message": "Not Found",
 }
 ```
+
 ### **4\. Authentication Middleware:**
 
 Implement an Authentication Middleware to authenticate your application. Ensures that only user  and admin can access their own accessible routes.
@@ -884,20 +842,7 @@ Implement an Authentication Middleware to authenticate your application. Ensures
 ```
 
 ### **5\. Zod Validation:**
+
 The API employs Zod for input validation, ensuring data consistency. When validation fails, a 400 Bad Request status code is returned, accompanied by detailed error messages specifying the erroneous fields and reasons.
 
-* * *
-
-### ⏰ **Deadline:**
-
-- 60 Marks: June 15, 2024, 11.59 PM (4 days)
-- 50 Marks: June 22, 2024, 11.59 PM (7 days)
-- After June 22, 30 Marks Deadline
-
-## 🚫 **Important Note:**
-
-Plagiarism will not be tolerated. Ensure that the code you submit is your work. Any instances of plagiarism will result in 0 Marks.
-
 ---
-
-By following these instructions, you'll be well-equipped to complete Assignment 3 successfully. Good luck! 🍀

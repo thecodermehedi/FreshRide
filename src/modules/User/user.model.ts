@@ -1,19 +1,22 @@
 import bcrypt from "bcrypt";
-import { model, Schema } from "mongoose";
-import type { TUSER } from "./user.types";
 import config from "../../config";
+import { model, Schema } from "mongoose";
+import type { TUser } from "../Auth/auth.types";
 
-const userSchema = new Schema<TUSER>({
+const userSchema = new Schema<TUser>({
   name: {
     type: String,
     required: true
   },
   email: {
     type: String,
+    unique: true,
+    index: true,
     required: true
   },
   password: {
     type: String,
+    select: false,
     required: true
   },
   phone: {
@@ -22,6 +25,8 @@ const userSchema = new Schema<TUSER>({
   },
   role: {
     type: String,
+    enum: ['admin', 'user'],
+    default: 'user',
     required: true
   },
   address: {
@@ -35,17 +40,12 @@ const userSchema = new Schema<TUSER>({
 )
 
 userSchema.pre('save', async function (next) {
-  const user = this as TUSER;
+  const user = this as TUser;
   user.password = await bcrypt.hash(user.password, config.bcryptSaltRounds);
   next();
 });
 
-userSchema.post('save', function (doc, next) {
-  doc.password = '';
-  next();
-});
 
-
-const UserModel = model<TUSER>('User', userSchema)
+const UserModel = model<TUser>('User', userSchema)
 
 export default UserModel;

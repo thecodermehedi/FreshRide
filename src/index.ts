@@ -1,21 +1,34 @@
-import cors from 'cors';
+// import cors from 'cors';
 import morgan from 'morgan';
-import http, { Server } from 'http'
-import cookieParser from "cookie-parser";
-import express, { type Application } from 'express';
+import http, {Server} from 'http';
+import cookieParser from 'cookie-parser';
+import express, {type Application} from 'express';
 import config from './config';
 import mongoose from 'mongoose';
+import router from './routes';
 
+export const {dbUri, dbHost, dbName, nodeEnv, port} = config;
+export const app: Application = express();
+export const server: Server = http.createServer(app);
 
-export const {dbUri,dbHost,dbName,nodeEnv,port} = config;
-export const app: Application = express()
-export const server: Server = http.createServer(app)
+app.use(express.json());
+app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  const serverInfo = {
+    name: 'Car Washing Booking System',
+    version: '1.0.0',
+    description: 'Welcome to the Car Washing Booking System API!',
+    author: 'Mehedi Hasan',
+    contact: 'thecodermehedi@gmail.com'
+  };
 
-app.use(express.json())
-app.use(cookieParser())
+  res.status(200).json(serverInfo);
+});
+
+app.use('/api', router);
 app.use(morgan('dev'));
-app.use(cors({ origin: ['http://localhost:5173'] }));
+// app.use(cors({origin: ['http://localhost:5173']}));
 
 (async () => {
   let dbStringUri: string = dbUri
@@ -49,4 +62,3 @@ app.use(cors({ origin: ['http://localhost:5173'] }));
     throw new Error('😈 Error connecting to the database');
   }
 })();
-

@@ -26,7 +26,7 @@
   "scripts": {
     "build": "bun build ./src --outdir ./build",
     "start": "node --env-file=.env build/index.js",
-    "dev": "bun src/index.ts --watch",
+    "dev": "bun --hot src/index.ts",
     "lint": "bunx eslint src",
     "format": "bunx prettier --write ."
   },

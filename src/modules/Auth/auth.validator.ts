@@ -29,7 +29,7 @@ const signupValidationSchema = z.object({
     phone: z.string()
       .trim()
       .min(1, "Phone number is required.")
-      .regex(/^\+?[\d\s\-\(\)]+$/, "Phone number format is invalid."),
+      .regex(/^\+?[\d\s-()]+$/, "Phone number format is invalid."),
     role: z.enum(['user', 'admin'], {
       errorMap: () => ({ message: "Role must be either 'user' or 'admin'." })
     }).default('user'),

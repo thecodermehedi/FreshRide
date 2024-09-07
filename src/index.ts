@@ -6,6 +6,8 @@ import express, {type Application} from 'express';
 import config from './config';
 import mongoose from 'mongoose';
 import router from './routes';
+import notFound from './middlewares/notFound';
+import globalErrorHandler from './middlewares/globalErrorHandler';
 
 export const {dbUri, dbHost, dbName, nodeEnv, port} = config;
 export const app: Application = express();
@@ -13,6 +15,7 @@ export const server: Server = http.createServer(app);
 
 app.use(express.json());
 app.use(cookieParser());
+app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
   const serverInfo = {
@@ -27,8 +30,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', router);
-app.use(morgan('dev'));
-// app.use(cors({origin: ['http://localhost:5173']}));
+app.use(notFound);
+app.use(globalErrorHandler);
 
 (async () => {
   let dbStringUri: string = dbUri

@@ -1,15 +1,13 @@
 import httpStatus from 'http-status';
 import ServiceModel from './service.model';
 import type {TService} from './service.types';
+import AppError from '../../errors/AppError';
 
 const createService = async (serviceData: TService) => {
   const serviceDetails = await ServiceModel.findOne({name: serviceData.name});
   const isServiceExist = !!serviceDetails;
   if (isServiceExist) {
-    throw {
-      status: httpStatus.CONFLICT,
-      message: 'Service already exists',
-    };
+    throw new AppError(httpStatus.CONFLICT, 'Service already exists');
   }
   return await ServiceModel.create(serviceData);
 };
@@ -17,7 +15,7 @@ const createService = async (serviceData: TService) => {
 const getServices = async () => {
   const services = await ServiceModel.find();
   if (!services) {
-    throw {status: httpStatus.NOT_FOUND, message: 'Services not found'};
+    throw new AppError(httpStatus.NOT_FOUND, 'Services not found');
   }
   return services;
 };
@@ -25,7 +23,7 @@ const getServices = async () => {
 const getService = async (serviceId: string) => {
   const service = await ServiceModel.findById(serviceId);
   if (!service) {
-    throw {status: httpStatus.NOT_FOUND, message: 'Service not found'};
+    throw new AppError(httpStatus.NOT_FOUND, 'Service not found');
   }
   return service;
 };
@@ -38,7 +36,7 @@ const updateService = async (
     new: true,
   });
   if (!service) {
-    throw {status: httpStatus.NOT_FOUND, message: 'Service not found'};
+    throw new AppError(httpStatus.NOT_FOUND, 'Service not found');
   }
   return service;
 };
@@ -50,7 +48,7 @@ const deleteService = async (serviceId: string) => {
     {new: true},
   );
   if (!service) {
-    throw {status: httpStatus.NOT_FOUND, message: 'Service not found'};
+    throw new AppError(httpStatus.NOT_FOUND, 'Service not found');
   }
   return service;
 };

@@ -4,6 +4,7 @@ import type {TLogin, TUser} from './auth.types';
 import {createToken} from './auth.utils';
 import config from '../../config';
 import httpStatus from 'http-status';
+import AppError from '../../errors/AppError';
 
 const login = async (params: TLogin) => {
   // Check if user exists by querying the user with recieved email
@@ -12,8 +13,7 @@ const login = async (params: TLogin) => {
   );
   const isUserExists = !!userDetails;
   if (!isUserExists) {
-    //TODO: Handle Error from here
-    throw {status: httpStatus.NOT_FOUND, message: 'User not found'};
+    throw new AppError(httpStatus.NOT_FOUND, 'User not found');
   }
 
   // Check if the provide password is correct or not
@@ -25,8 +25,7 @@ const login = async (params: TLogin) => {
     );
   }
   if (!isPasswordMatched) {
-    //TODO: Handle Error from here
-    throw {status: httpStatus.UNAUTHORIZED, message: 'Invalid password'};
+    throw new AppError(httpStatus.UNAUTHORIZED, 'Invalid password');
   }
 
   // Generate AccessToken with userdetails
@@ -49,7 +48,7 @@ const login = async (params: TLogin) => {
 const signup = async (params: TUser) => {
   const isUserExists = await UserModel.findOne({email: params.email});
   if (isUserExists) {
-    throw {status: httpStatus.CONFLICT, message: 'User already exists'};
+    throw new AppError(httpStatus.CONFLICT, 'User already exists');
   }
   return await UserModel.create(params);
 };

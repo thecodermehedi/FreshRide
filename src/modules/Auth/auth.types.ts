@@ -1,7 +1,9 @@
+import type {TUserRole} from '../User/user.types';
+
 export type TLogin = {
-  email: string,
-  password: string
-}
+  email: string;
+  password: string;
+};
 
 export type TUser = {
   id?: string;
@@ -9,6 +11,6 @@ export type TUser = {
   email: string;
   password: string;
   phone: string;
-  role: 'admin' | 'user';
+  role: TUserRole;
   address: string;
-}
+};

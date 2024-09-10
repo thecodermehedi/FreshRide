@@ -5,7 +5,7 @@ import AppError from '../../errors/AppError';
 import ServiceModel from '../Service/service.model';
 import {addMinutes, differenceInMinutes, format, parse} from 'date-fns';
 
-const createSlot = async (slotData: TSlot) => {
+const createSlots = async (slotData: TSlot) => {
   const serviceDetails = await ServiceModel.findById(slotData.service);
   const isServiceExist = !!serviceDetails;
   if (!isServiceExist) {
@@ -46,5 +46,5 @@ const createSlot = async (slotData: TSlot) => {
 };
 
 export const slotService = {
-  createSlot,
+  createSlots,
 };

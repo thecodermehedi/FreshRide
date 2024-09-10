@@ -8,13 +8,16 @@ import httpStatus from 'http-status';
 
 const auth = (...requiredRoles: Array<TUserRole>) =>
   catchAsync(async (req, res, next) => {
-    const token = req?.headers?.authorization;
+    let token = req.headers.authorization;
     if (!token) {
       throw new AppError(
         httpStatus.UNAUTHORIZED,
         'You have no access to this route',
       );
     }
+        if (token.startsWith('Bearer ')) {
+          token = token.slice(7, token.length);
+        }
     const decoded = jwt.verify(token, config.jwtAccessSecret) as JwtPayload;
     const user = await UserModel.findOne({email: decoded.email});
     if (!user) {

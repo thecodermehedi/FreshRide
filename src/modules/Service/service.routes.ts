@@ -1,6 +1,7 @@
 import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import {createRouter} from '../../utils';
+import { slotController } from '../Slot/slot.controller';
 import {USER_ROLE} from '../User/user.constant';
 import {serviceController} from './service.controller';
 import {serviceValidator} from './service.validator';
@@ -15,6 +16,7 @@ router.post(
   validateRequest(serviceValidator.createServiceValidationSchema),
   serviceController.createService,
 );
+router.post('/slots', auth(USER_ROLE.ADMIN), slotController.createSlots);
 router.put(
   '/:id',
   auth(USER_ROLE.ADMIN),

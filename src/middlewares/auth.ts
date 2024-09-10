@@ -15,12 +15,7 @@ const auth = (...requiredRoles: Array<TUserRole>) =>
         'You have no access to this route',
       );
     }
-    console.log("🚀 ~ file: auth.ts:auth ~ token:", token);
-
     const decoded = jwt.verify(token, config.jwtAccessSecret) as JwtPayload;
-
-    console.log("🚀 ~ file: auth.ts:auth ~ decoded:", decoded);
-
     const user = await UserModel.findOne({ email: decoded.email });
     if (!user) {
       throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');

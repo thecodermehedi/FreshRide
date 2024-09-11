@@ -29,13 +29,17 @@ const serviceSchema = new Schema<TService>(
   },
 );
 
+// Pre-hook for the 'find' operation
 serviceSchema.pre('find', function (next) {
-  this.find({isDeleted: {$ne: true}});
+  // Exclude deleted documents from the query
+  this.where({isDeleted: {$ne: true}});
   next();
 });
 
+// Pre-hook for the 'findOne' operation
 serviceSchema.pre('findOne', function (next) {
-  this.find({isDeleted: {$ne: true}});
+  // Exclude deleted documents from the query
+  this.where({isDeleted: {$ne: true}});
   next();
 });
 

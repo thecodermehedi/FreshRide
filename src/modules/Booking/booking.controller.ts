@@ -1,10 +1,11 @@
-import type {RequestHandler} from 'express';
-import {catchAsync} from '../../utils';
+import type { RequestHandler } from 'express';
+import { catchAsync } from '../../utils';
 import httpStatus from 'http-status';
-import {bookingService} from './booking.service';
+import { bookingService } from './booking.service';
+import type { TPayloadUser } from './booking.type';
 
 const bookService: RequestHandler = catchAsync(async (req, res) => {
-  const booking = await bookingService.bookService(req.body, req.user);
+  const booking = await bookingService.bookService(req.body, req.user as TPayloadUser);
   res.json({
     success: true,
     statusCode: httpStatus.OK,
@@ -14,7 +15,7 @@ const bookService: RequestHandler = catchAsync(async (req, res) => {
 });
 
 const getBookings: RequestHandler = catchAsync(async (req, res) => {
-  const bookings = await bookingService.getBookings(req.user);
+  const bookings = await bookingService.getBookings(req.user as TPayloadUser);
   res.json({
     success: true,
     statusCode: httpStatus.OK,

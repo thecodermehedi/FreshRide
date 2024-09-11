@@ -1,5 +1,5 @@
-import {model, Schema} from 'mongoose';
-import type {TBooking} from './booking.type';
+import { model, Schema } from 'mongoose';
+import type { TBooking } from './booking.type';
 
 const bookingSchema = new Schema<TBooking>({
   customer: {
@@ -7,12 +7,12 @@ const bookingSchema = new Schema<TBooking>({
     ref: 'Customer',
     required: true,
   },
-  service: {
+  serviceId: {
     type: Schema.Types.ObjectId,
     ref: 'Service',
     required: true,
   },
-  slot: {
+  slotId: {
     type: Schema.Types.ObjectId,
     ref: 'Slot',
     required: true,
@@ -33,10 +33,12 @@ const bookingSchema = new Schema<TBooking>({
     ],
     required: true,
   },
-  vehicleBrand: {type: String, required: true},
-  vehicleModel: {type: String, required: true},
-  manufacturingYear: {type: Number, required: true},
-  registrationPlate: {type: String, required: true},
+  vehicleBrand: { type: String, required: true },
+  vehicleModel: { type: String, required: true },
+  manufacturingYear: { type: Number, required: true },
+  registrationPlate: { type: String, required: true },
+}, {
+  timestamps: true,
 });
 
 const BookingModel = model<TBooking>('Booking', bookingSchema);

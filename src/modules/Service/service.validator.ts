@@ -45,7 +45,7 @@ export const updateServiceValidationSchema = z.object({
   body: servicePropertiesSchema.partial(),
 });
 
-export const serviceValidator = {
+export const serviceValidations = {
   createServiceValidationSchema,
   updateServiceValidationSchema,
 };

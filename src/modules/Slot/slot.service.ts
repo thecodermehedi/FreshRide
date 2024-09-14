@@ -1,9 +1,9 @@
 import httpStatus from 'http-status';
 import SlotModel from './slot.model';
-import type { TSlot } from './slot.types';
+import type {TSlot} from './slot.types';
 import AppError from '../../errors/AppError';
 import ServiceModel from '../Service/service.model';
-import { addMinutes, differenceInMinutes, format, parse } from 'date-fns';
+import {convertMinutesToTime, convertTimeToMinutes} from './slot.utils';
 
 const createSlots = async (slotData: TSlot) => {
   const serviceDetails = await ServiceModel.findById(slotData.service);
@@ -11,53 +11,45 @@ const createSlots = async (slotData: TSlot) => {
   if (!isServiceExist) {
     throw new AppError(httpStatus.NOT_FOUND, 'Service not found');
   }
-
-  // Service duration in minutes -> 30 - start time: 9:15, end time: 18:30
   const serviceDurationInMinutes = serviceDetails.duration;
-  const slotStartTime = slotData.startTime;
-  const slotEndTime = slotData.endTime;
+  const {startTime, endTime, service, date} = slotData;
 
-  // Parse time strings to Date objects
-  const slotStartDate = parse(slotStartTime, 'HH:mm', new Date());
-  const slotEndDate = parse(slotEndTime, 'HH:mm', new Date());
+  const startMinutes = convertTimeToMinutes(startTime);
+  const endMinutes = convertTimeToMinutes(endTime);
+  const totalDurationInMinutes = endMinutes - startMinutes;
 
-  // Total duration of the slot in minutes
-  const slotDuration = differenceInMinutes(slotEndDate, slotStartDate);
+  const numberOfSlots = Math.floor(
+    totalDurationInMinutes / serviceDurationInMinutes,
+  );
 
-  // Number of slots
-  const numberOfSlots = Math.floor(slotDuration / serviceDurationInMinutes);
-
-  // Generate slots with startTime and endTime starting from slotStartTime
-  const slots = [];
+  const createdSlots: TSlot[] = [];
   for (let i = 0; i < numberOfSlots; i++) {
-    const start = addMinutes(slotStartTime, i * serviceDurationInMinutes);
-    const end = addMinutes(start, serviceDurationInMinutes);
+    const slotStartMinutes = startMinutes + i * serviceDurationInMinutes;
+    const slotEndMinutes = slotStartMinutes + serviceDurationInMinutes;
     const slot = {
-      service: slotData.service,
-      date: slotData.date,
-      startTime: format(start, 'HH:mm'),
-      endTime: format(end, 'HH:mm'),
-      // isBooked: 'available',
+      service,
+      date,
+      startTime: convertMinutesToTime(slotStartMinutes),
+      endTime: convertMinutesToTime(slotEndMinutes),
     };
     const createdSlot = await SlotModel.create(slot);
-    slots.push(createdSlot);
+    createdSlots.push(createdSlot);
   }
-  return slots;
+  return createdSlots;
 };
 
-
-const getSlots = async ({ date, service }: Record<string, unknown>) => {
+const getSlots = async ({date, service}: Record<string, unknown>) => {
   if (date && service) {
-    return await SlotModel.find({ date, service }).populate('service');
+    return await SlotModel.find({date, service}).populate('service');
   }
   if (date && !service) {
-    return await SlotModel.find({ date }).populate('service');
+    return await SlotModel.find({date}).populate('service');
   }
   if (!date && service) {
-    return await SlotModel.find({ service }).populate('service');
+    return await SlotModel.find({service}).populate('service');
   }
   return await SlotModel.find().populate('service');
-}
+};
 
 export const slotService = {
   createSlots,

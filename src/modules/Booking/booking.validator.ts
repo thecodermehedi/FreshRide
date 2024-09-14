@@ -52,6 +52,6 @@ const createBookingValidationSchema = z.object({
   }),
 });
 
-export const bookingValidator = {
+export const bookingValidations = {
   createBookingValidationSchema,
 };

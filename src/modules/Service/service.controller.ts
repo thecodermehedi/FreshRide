@@ -15,7 +15,15 @@ const createService: RequestHandler = catchAsync(async (req, res) => {
 
 const getServices: RequestHandler = catchAsync(async (req, res) => {
   const services = await serviceService.getServices();
-  res.json({
+  if (services.length === 0) {
+    return res.json({
+      success: false,
+      statusCode: httpStatus.NOT_FOUND,
+      message: 'No Data found',
+      data: services,
+    });
+  }
+  return res.json({
     success: true,
     statusCode: httpStatus.OK,
     message: 'Services retrieved successfully',

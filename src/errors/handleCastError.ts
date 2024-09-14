@@ -1,6 +1,6 @@
 import type mongoose from 'mongoose';
 import httpStatus from 'http-status';
-import type { TReturnError } from './error.types';
+import type {TReturnError} from './error.types';
 
 const handleCastError = (err: mongoose.Error.CastError): TReturnError => {
   return {

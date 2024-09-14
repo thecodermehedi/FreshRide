@@ -1,9 +1,9 @@
 import config from '../config';
 import AppError from '../errors/AppError';
 import UserModel from '../modules/User/user.model';
-import jwt, { type JwtPayload } from 'jsonwebtoken';
-import type { TUserRole } from '../modules/User/user.types';
-import { catchAsync } from '../utils';
+import jwt, {type JwtPayload} from 'jsonwebtoken';
+import type {TUserRole} from '../modules/User/user.types';
+import {catchAsync} from '../utils';
 import httpStatus from 'http-status';
 
 const auth = (...requiredRoles: Array<TUserRole>) =>
@@ -16,7 +16,7 @@ const auth = (...requiredRoles: Array<TUserRole>) =>
       );
     }
     const decoded = jwt.verify(token, config.jwtAccessSecret) as JwtPayload;
-    const user = await UserModel.findOne({ email: decoded.email });
+    const user = await UserModel.findOne({email: decoded.email});
     if (!user) {
       throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
     }

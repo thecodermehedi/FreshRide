@@ -1,5 +1,5 @@
-import { createRouter } from "../../utils";
-import { slotController } from "./slot.controller";
+import {createRouter} from '../../utils';
+import {slotController} from './slot.controller';
 
 const router = createRouter();
 

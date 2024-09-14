@@ -1,5 +1,5 @@
 export type TErrorObject = {
-  path?: string ;
+  path?: string;
   message: string;
 };
 

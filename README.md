@@ -1,6 +1,7 @@
 ![Assignment-3](https://t4.ftcdn.net/jpg/03/06/88/29/360_F_306882952_XYkVbLIWubBrEyg5vvjcKisffe8CsuZG.jpg)
 
 # Assignment 3 🚀
+
 <p align="center">(Batch-3)</p>
 
 🎉 **Welcome to Assignment 3 !!**
@@ -8,12 +9,14 @@
 ## 🛠️ Technology You Can Use
 
 - **Backend Development:**
+
   - Node.js
   - Express.js
   - Mongoose
   - TypeScript
 
 - **Package Management:**
+
   - Any npm packages that are required for your project
 
 - **Additional Technologies:**
@@ -36,7 +39,7 @@
 
 ## Assignment
 
-# Car Wash Booking  System
+# Car Wash Booking System
 
 ## Story
 
@@ -138,7 +141,7 @@ You have been assigned the task of building the backend for a Car Washing System
     "role": "admin",
     "address": "123 Main Street, City, Country",
     "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
   }
 }
 ```
@@ -151,8 +154,8 @@ You have been assigned the task of building the backend for a Car Washing System
 
 ```json
 {
-    "email": "web@programming-hero.com",
-    "password": "ph-password",
+  "email": "web@programming-hero.com",
+  "password": "ph-password"
 }
 ```
 
@@ -160,20 +163,20 @@ You have been assigned the task of building the backend for a Car Washing System
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "User logged in successfully",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDYyOWI4ZThjZmNkOTI2Mzg0YjZlNWUiLCJuYW1lIjoiUHJvZ3JhbW1pbmcgSGVyb3MiLCJlbWFpbCI6IndlYkBwcm9ncmFtbWluZy1oZXJvLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5MCIsInJvbGUiOiJhZG1pbiIsImFkZHJlc3MiOiIxMjMgTWFpbiBTdHJlZXQsIENpdHksIENvdW50cnkiLCJpYXQiOjE2MjQ1MTY2MTksImV4cCI6MTYyNDUyMDYxOX0.kWrEphO6lE9P5tvzrNBwx0sNogNuXpdyG-YoN9fB1W8",
-    "data": {
-        "_id": "60629b8e8cfcd926384b6e5e",
-        "name": "Programming Hero",
-        "email": "web@programming-hero.com",
-        "phone": "1234567890",
-        "role": "admin",
-        "address": "123 Main Street, City, Country",
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "User logged in successfully",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDYyOWI4ZThjZmNkOTI2Mzg0YjZlNWUiLCJuYW1lIjoiUHJvZ3JhbW1pbmcgSGVyb3MiLCJlbWFpbCI6IndlYkBwcm9ncmFtbWluZy1oZXJvLmNvbSIsInBob25lIjoiMTIzNDU2Nzg5MCIsInJvbGUiOiJhZG1pbiIsImFkZHJlc3MiOiIxMjMgTWFpbiBTdHJlZXQsIENpdHksIENvdW50cnkiLCJpYXQiOjE2MjQ1MTY2MTksImV4cCI6MTYyNDUyMDYxOX0.kWrEphO6lE9P5tvzrNBwx0sNogNuXpdyG-YoN9fB1W8",
+  "data": {
+    "_id": "60629b8e8cfcd926384b6e5e",
+    "name": "Programming Hero",
+    "email": "web@programming-hero.com",
+    "phone": "1234567890",
+    "role": "admin",
+    "address": "123 Main Street, City, Country",
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -195,11 +198,11 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 
 ```json
 {
-    "name": "Car Wash",
-    "description": "Professional car washing service",
-    "price": 50,
-    "duration": 60, // Duration in minutes
-    "isDeleted": false
+  "name": "Car Wash",
+  "description": "Professional car washing service",
+  "price": 50,
+  "duration": 60, // Duration in minutes
+  "isDeleted": false
 }
 ```
 
@@ -207,19 +210,19 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Service created successfully",
-    "data": {
-        "_id": "60d9c4e4f3b4b544b8b8d1c5",
-        "name": "Car Wash",
-        "description": "Professional car washing service",
-        "price": 50,
-        "duration": 60,
-        "isDeleted": false,
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "Service created successfully",
+  "data": {
+    "_id": "60d9c4e4f3b4b544b8b8d1c5",
+    "name": "Car Wash",
+    "description": "Professional car washing service",
+    "price": 50,
+    "duration": 60,
+    "isDeleted": false,
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -231,19 +234,19 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Service retrieved successfully",
-    "data": {
-        "_id": "60d9c4e4f3b4b544b8b8d1c5",
-        "name": "Car Wash",
-        "description": "Professional car washing service",
-        "price": 50,
-        "duration": 60,
-        "isDeleted": false,
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "Service retrieved successfully",
+  "data": {
+    "_id": "60d9c4e4f3b4b544b8b8d1c5",
+    "name": "Car Wash",
+    "description": "Professional car washing service",
+    "price": 50,
+    "duration": 60,
+    "isDeleted": false,
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -255,41 +258,41 @@ You must include "Bearer" at the beginning of the token! Do not copy and apply d
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Services retrieved successfully",
-    "data": [
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c5",
-            "name": "Car Wash",
-            "description": "Professional car washing service",
-            "price": 50,
-            "duration": 60,
-            "isDeleted": false,
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c6",
-            "name": "Oil Change",
-            "description": "Regular engine oil change service",
-            "price": 30,
-            "duration": 30,
-            "isDeleted": false,
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "name": "Tire Rotation",
-            "description": "Rotation of vehicle tires",
-            "price": 20,
-            "duration": 45,
-            "isDeleted": false,
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        }
-    ]
+  "success": true,
+  "statusCode": 200,
+  "message": "Services retrieved successfully",
+  "data": [
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c5",
+      "name": "Car Wash",
+      "description": "Professional car washing service",
+      "price": 50,
+      "duration": 60,
+      "isDeleted": false,
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c6",
+      "name": "Oil Change",
+      "description": "Regular engine oil change service",
+      "price": 30,
+      "duration": 30,
+      "isDeleted": false,
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "name": "Tire Rotation",
+      "description": "Rotation of vehicle tires",
+      "price": 20,
+      "duration": 45,
+      "isDeleted": false,
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    }
+  ]
 }
 ```
 
@@ -311,7 +314,7 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "price": 700 // You can include any attribute(s) of the service collection that you want to update, one or more.
+  "price": 700 // You can include any attribute(s) of the service collection that you want to update, one or more.
 }
 ```
 
@@ -319,19 +322,19 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Service updated successfully",
-    "data": {
-        "_id": "60d9c4e4f3b4b544b8b8d1c5",
-        "name": "Car Wash",
-        "description": "Professional car washing service",
-        "price": 700,
-        "duration": 60,
-        "isDeleted": false,
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "Service updated successfully",
+  "data": {
+    "_id": "60d9c4e4f3b4b544b8b8d1c5",
+    "name": "Car Wash",
+    "description": "Professional car washing service",
+    "price": 700,
+    "duration": 60,
+    "isDeleted": false,
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -353,19 +356,19 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Service deleted successfully",
-    "data": {
-        "_id": "60d9c4e4f3b4b544b8b8d1c5",
-        "name": "Car Wash",
-        "description": "Professional car washing service",
-        "price": 50,
-        "duration": 60,
-        "isDeleted": true,
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "Service deleted successfully",
+  "data": {
+    "_id": "60d9c4e4f3b4b544b8b8d1c5",
+    "name": "Car Wash",
+    "description": "Professional car washing service",
+    "price": 50,
+    "duration": 60,
+    "isDeleted": true,
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -387,10 +390,10 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "service": "60d9c4e4f3b4b544b8b8d1c5",
-    "date": "2024-06-15",
-    "startTime": "09:00",
-    "endTime": "14:00"
+  "service": "60d9c4e4f3b4b544b8b8d1c5",
+  "date": "2024-06-15",
+  "startTime": "09:00",
+  "endTime": "14:00"
 }
 ```
 
@@ -398,61 +401,61 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Slots created successfully",
-    "data": [
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c6",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "09:00",
-            "endTime": "10:00", //look at the starting point
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "10:00",
-            "endTime": "11:00",
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "11:00",
-            "endTime": "12:00",
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "12:00",
-            "endTime": "13:00",
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "13:00",
-            "endTime": "14:00",  //look at the ending point
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-            "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        }
-    ]
+  "success": true,
+  "statusCode": 200,
+  "message": "Slots created successfully",
+  "data": [
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c6",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "09:00",
+      "endTime": "10:00", //look at the starting point
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "11:00",
+      "endTime": "12:00",
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "13:00",
+      "endTime": "14:00", //look at the ending point
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+      "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+    }
+  ]
 }
 ```
 
@@ -460,34 +463,34 @@ You must include "Bearer" at the beginning of the token!
 
 1. **Retrieve Service Duration**: Assume the service duration is provided or retrieved from the database. For this example, we'll use a service duration of 60 minutes.
 2. **Parse Request Body**: Extract the necessary information from the request body:
-    - Start time: "09:00"
-    - End time: "14:00"
-    - Service duration: 60 minutes
+   - Start time: "09:00"
+   - End time: "14:00"
+   - Service duration: 60 minutes
 3. **Calculate the Total Duration**:
-    - Convert the start time and end time to minutes.
-    - Calculate the total duration between the start and end times in minutes.
+   - Convert the start time and end time to minutes.
+   - Calculate the total duration between the start and end times in minutes.
 4. **Generate Slot Time Intervals**:
-    - Determine the number of slots by dividing the total duration by the service duration.
-    - Generate start and end times for each slot.
+   - Determine the number of slots by dividing the total duration by the service duration.
+   - Generate start and end times for each slot.
 5. **Example Calculation**
-    1. **Step-by-Step Breakdown**:
-    2. **Service Duration**: 60 minutes
-    3. **Start Time and End Time**:
-        - Start Time: "09:00"
-        - End Time: "14:00"
-    4. **Convert Times to Minutes**:
-        - "09:00" → 9 \* 60 = 540 minutes.
-        - "14:00" → 14 \* 60 = 840 minutes.
-    5. **Calculate Total Duration**:
-        - Total Duration: 840 minutes - 540 minutes = 300 minutes
-    6. **Number of Slots**:
-        - Number of Slots: 300 minutes / 60 minutes per slot = 5 slots
-    7. **Generate Slot Time Intervals**:
-        - Slot 1: Start Time: "09:00", End Time: "10:00"
-        - Slot 2: Start Time: "10:00", End Time: "11:00"
-        - Slot 3: Start Time: "11:00", End Time: "12:00"
-        - Slot 4: Start Time: "12:00", End Time: "13:00"
-        - Slot 5: Start Time: "13:00", End Time: "14:00"
+   1. **Step-by-Step Breakdown**:
+   2. **Service Duration**: 60 minutes
+   3. **Start Time and End Time**:
+      - Start Time: "09:00"
+      - End Time: "14:00"
+   4. **Convert Times to Minutes**:
+      - "09:00" → 9 \* 60 = 540 minutes.
+      - "14:00" → 14 \* 60 = 840 minutes.
+   5. **Calculate Total Duration**:
+      - Total Duration: 840 minutes - 540 minutes = 300 minutes
+   6. **Number of Slots**:
+      - Number of Slots: 300 minutes / 60 minutes per slot = 5 slots
+   7. **Generate Slot Time Intervals**:
+      - Slot 1: Start Time: "09:00", End Time: "10:00"
+      - Slot 2: Start Time: "10:00", End Time: "11:00"
+      - Slot 3: Start Time: "11:00", End Time: "12:00"
+      - Slot 4: Start Time: "12:00", End Time: "13:00"
+      - Slot 5: Start Time: "13:00", End Time: "14:00"
 
 ### **9\. Get available slots**
 
@@ -508,49 +511,49 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Available slots retrieved successfully",
-    "data": [
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c6",
-            "service": {
-               "_id": "60d9c4e4f3b4b544b8b8d1c5",
-                "name": "Car Wash",
-                "description": "Professional car washing service",
-                "price": 700,
-                "duration": 60,
-                "isDeleted": false,
-                "createdAt": "2024-06-15T12:00:00Z",
-                "updatedAt": "2024-06-15T12:00:00Z"
-             },
-            "date": "2024-06-15",
-            "startTime": "09:00",
-            "endTime": "10:00",
-            "isBooked": "available",
-            "createdAt": "2024-06-15T12:00:00Z",
-            "updatedAt": "2024-06-15T12:00:00Z"
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c9",
-            "service": {
-               "_id": "60d9c4e4f3b4b544b8b8d1c5",
-                "name": "Car Wash",
-                "description": "Professional car washing service",
-                "price": 700,
-                "duration": 60,
-                "isDeleted": false,
-                "createdAt": "2024-06-15T12:00:00Z",
-                "updatedAt": "2024-06-15T12:00:00Z"
-             },
-            "date": "2024-06-15",
-            "startTime": "10:00",
-            "endTime": "11:00",
-            "isBooked": "canceled",
-            "createdAt": "2024-06-15T12:00:00Z",
-            "updatedAt": "2024-06-15T12:00:00Z"
-        }
-    ]
+  "success": true,
+  "statusCode": 200,
+  "message": "Available slots retrieved successfully",
+  "data": [
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c6",
+      "service": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c5",
+        "name": "Car Wash",
+        "description": "Professional car washing service",
+        "price": 700,
+        "duration": 60,
+        "isDeleted": false,
+        "createdAt": "2024-06-15T12:00:00Z",
+        "updatedAt": "2024-06-15T12:00:00Z"
+      },
+      "date": "2024-06-15",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "isBooked": "available",
+      "createdAt": "2024-06-15T12:00:00Z",
+      "updatedAt": "2024-06-15T12:00:00Z"
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c9",
+      "service": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c5",
+        "name": "Car Wash",
+        "description": "Professional car washing service",
+        "price": 700,
+        "duration": 60,
+        "isDeleted": false,
+        "createdAt": "2024-06-15T12:00:00Z",
+        "updatedAt": "2024-06-15T12:00:00Z"
+      },
+      "date": "2024-06-15",
+      "startTime": "10:00",
+      "endTime": "11:00",
+      "isBooked": "canceled",
+      "createdAt": "2024-06-15T12:00:00Z",
+      "updatedAt": "2024-06-15T12:00:00Z"
+    }
+  ]
 }
 ```
 
@@ -572,13 +575,13 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "serviceId": "60d9c4e4f3b4b544b8b8d1c5",
-    "slotId": "60d9c4e4f3b4b544b8b8d1c6",
-    "vehicleType": "car",
-    "vehicleBrand": "Toyota",
-    "vehicleModel": "Camry",
-    "manufacturingYear": 2020,
-    "registrationPlate": "ABC123"
+  "serviceId": "60d9c4e4f3b4b544b8b8d1c5",
+  "slotId": "60d9c4e4f3b4b544b8b8d1c6",
+  "vehicleType": "car",
+  "vehicleBrand": "Toyota",
+  "vehicleModel": "Camry",
+  "manufacturingYear": 2020,
+  "registrationPlate": "ABC123"
 }
 ```
 
@@ -586,42 +589,42 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "Booking successful",
-    "data": {
-        "_id": "60d9c4e4f3b4b544b8b8d1c7",
-        "customer": {
-            "_id": "123456789012345678901234",
-            "name": "John Doe",
-            "email": "johndoe@example.com",
-            "phone": "1234567890",
-            "address": "123 Main Street, City, Country"
-        },
-        "service": {
-            "_id": "60d9c4e4f3b4b544b8b8d1c5",
-            "name": "Car Wash",
-            "description": "Exterior and interior car cleaning",
-            "price": 50,
-            "duration": 30,
-            "isDeleted": false
-        },
-        "slot": {
-            "_id": "60d9c4e4f3b4b544b8b8d1c6",
-            "service": "60d9c4e4f3b4b544b8b8d1c5",
-            "date": "2024-06-15",
-            "startTime": "09:00",
-            "endTime": "10:00",
-            "isBooked": "booked" // Updated to "booked"
-        },
-        "vehicleType": "car",
-        "vehicleBrand": "Toyota",
-        "vehicleModel": "Camry",
-        "manufacturingYear": 2020,
-        "registrationPlate": "ABC123",
-        "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-        "updatedAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
-    }
+  "success": true,
+  "statusCode": 200,
+  "message": "Booking successful",
+  "data": {
+    "_id": "60d9c4e4f3b4b544b8b8d1c7",
+    "customer": {
+      "_id": "123456789012345678901234",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "1234567890",
+      "address": "123 Main Street, City, Country"
+    },
+    "service": {
+      "_id": "60d9c4e4f3b4b544b8b8d1c5",
+      "name": "Car Wash",
+      "description": "Exterior and interior car cleaning",
+      "price": 50,
+      "duration": 30,
+      "isDeleted": false
+    },
+    "slot": {
+      "_id": "60d9c4e4f3b4b544b8b8d1c6",
+      "service": "60d9c4e4f3b4b544b8b8d1c5",
+      "date": "2024-06-15",
+      "startTime": "09:00",
+      "endTime": "10:00",
+      "isBooked": "booked" // Updated to "booked"
+    },
+    "vehicleType": "car",
+    "vehicleBrand": "Toyota",
+    "vehicleModel": "Camry",
+    "manufacturingYear": 2020,
+    "registrationPlate": "ABC123",
+    "createdAt": "2024-06-15T12:00:00Z", // For this, ensure that your model includes the option to enable timestamps
+    "updatedAt": "2024-06-15T12:00:00Z" // For this, ensure that your model includes the option to enable timestamps
+  }
 }
 ```
 
@@ -645,79 +648,79 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "All bookings retrieved successfully",
-    "data": [
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "customer": {
-                "_id": "123456789012345678901234",
-                "name": "John Doe",
-                "email": "johndoe@example.com",
-                "phone": "1234567890",
-                "address": "123 Main Street, City, Country"
-            },
-            "service": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c5",
-                "name": "Car Wash",
-                "description": "Exterior and interior car cleaning",
-                "price": 50,
-                "duration": 30,
-                "isDeleted": false
-            },
-            "slot": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c6",
-                "service": "60d9c4e4f3b4b544b8b8d1c5",
-                "date": "2024-06-15",
-                "startTime": "09:00",
-                "endTime": "09:30",
-                "isBooked": "booked"
-            },
-            "vehicleType": "car",
-            "vehicleBrand": "Toyota",
-            "vehicleModel": "Camry",
-            "manufacturingYear": 2020,
-            "registrationPlate": "ABC123",
-            "createdAt": "2024-06-15T12:00:00Z",
-            "updatedAt": "2024-06-15T12:00:00Z"
-        },
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c8",
-            "customer": {
-                "_id": "234567890123456789012345",
-                "name": "Jane Smith",
-                "email": "janesmith@example.com",
-                "phone": "0987654321",
-                "address": "456 Oak Street, City, Country"
-            },
-            "service": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c5",
-                "name": "Car Wash",
-                "description": "Exterior and interior car cleaning",
-                "price": 50,
-                "duration": 30,
-                "isDeleted": false
-            },
-            "slot": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c9",
-                "service": "60d9c4e4f3b4b544b8b8d1c5",
-                "date": "2024-06-15",
-                "startTime": "10:00",
-                "endTime": "10:30",
-                "isBooked": "canceled"
-            },
-            "vehicleType": "car",
-            "vehicleBrand": "Honda",
-            "vehicleModel": "Accord",
-            "manufacturingYear": 2018,
-            "registrationPlate": "XYZ456",
-            "createdAt": "2024-06-15T13:00:00Z",
-            "updatedAt": "2024-06-15T13:30:00Z"
-        }
-    ],
+  "success": true,
+  "statusCode": 200,
+  "message": "All bookings retrieved successfully",
+  "data": [
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "customer": {
+        "_id": "123456789012345678901234",
+        "name": "John Doe",
+        "email": "johndoe@example.com",
+        "phone": "1234567890",
+        "address": "123 Main Street, City, Country"
+      },
+      "service": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c5",
+        "name": "Car Wash",
+        "description": "Exterior and interior car cleaning",
+        "price": 50,
+        "duration": 30,
+        "isDeleted": false
+      },
+      "slot": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c6",
+        "service": "60d9c4e4f3b4b544b8b8d1c5",
+        "date": "2024-06-15",
+        "startTime": "09:00",
+        "endTime": "09:30",
+        "isBooked": "booked"
+      },
+      "vehicleType": "car",
+      "vehicleBrand": "Toyota",
+      "vehicleModel": "Camry",
+      "manufacturingYear": 2020,
+      "registrationPlate": "ABC123",
+      "createdAt": "2024-06-15T12:00:00Z",
+      "updatedAt": "2024-06-15T12:00:00Z"
+    },
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c8",
+      "customer": {
+        "_id": "234567890123456789012345",
+        "name": "Jane Smith",
+        "email": "janesmith@example.com",
+        "phone": "0987654321",
+        "address": "456 Oak Street, City, Country"
+      },
+      "service": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c5",
+        "name": "Car Wash",
+        "description": "Exterior and interior car cleaning",
+        "price": 50,
+        "duration": 30,
+        "isDeleted": false
+      },
+      "slot": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c9",
+        "service": "60d9c4e4f3b4b544b8b8d1c5",
+        "date": "2024-06-15",
+        "startTime": "10:00",
+        "endTime": "10:30",
+        "isBooked": "canceled"
+      },
+      "vehicleType": "car",
+      "vehicleBrand": "Honda",
+      "vehicleModel": "Accord",
+      "manufacturingYear": 2018,
+      "registrationPlate": "XYZ456",
+      "createdAt": "2024-06-15T13:00:00Z",
+      "updatedAt": "2024-06-15T13:30:00Z"
+    }
+  ]
 
-    // aditional bookings
+  // aditional bookings
 }
 ```
 
@@ -741,37 +744,37 @@ You must include "Bearer" at the beginning of the token!
 
 ```json
 {
-    "success": true,
-    "statusCode": 200,
-    "message": "User bookings retrieved successfully",
-    "data": [
-        {
-            "_id": "60d9c4e4f3b4b544b8b8d1c7",
-            "service": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c5",
-                "name": "Car Wash",
-                "description": "Exterior and interior car cleaning",
-                "price": 50,
-                "duration": 30,
-                "isDeleted": false
-            },
-            "slot": {
-                "_id": "60d9c4e4f3b4b544b8b8d1c6",
-                "service": "60d9c4e4f3b4b544b8b8d1c5",
-                "date": "2024-06-15",
-                "startTime": "09:00",
-                "endTime": "09:30",
-                "isBooked": "booked"
-            },
-            "vehicleType": "car",
-            "vehicleBrand": "Toyota",
-            "vehicleModel": "Camry",
-            "manufacturingYear": 2020,
-            "registrationPlate": "ABC123",
-            "createdAt": "2024-06-15T12:00:00Z",
-            "updatedAt": "2024-06-15T12:00:00Z"
-        }
-    ]
+  "success": true,
+  "statusCode": 200,
+  "message": "User bookings retrieved successfully",
+  "data": [
+    {
+      "_id": "60d9c4e4f3b4b544b8b8d1c7",
+      "service": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c5",
+        "name": "Car Wash",
+        "description": "Exterior and interior car cleaning",
+        "price": 50,
+        "duration": 30,
+        "isDeleted": false
+      },
+      "slot": {
+        "_id": "60d9c4e4f3b4b544b8b8d1c6",
+        "service": "60d9c4e4f3b4b544b8b8d1c5",
+        "date": "2024-06-15",
+        "startTime": "09:00",
+        "endTime": "09:30",
+        "isBooked": "booked"
+      },
+      "vehicleType": "car",
+      "vehicleBrand": "Toyota",
+      "vehicleModel": "Camry",
+      "manufacturingYear": 2020,
+      "registrationPlate": "ABC123",
+      "createdAt": "2024-06-15T12:00:00Z",
+      "updatedAt": "2024-06-15T12:00:00Z"
+    }
+  ]
 }
 ```
 
@@ -825,19 +828,19 @@ Implement a global "Not Found" handler for unmatched routes. When a route is not
 {
   "success": false,
   "statusCode": 404,
-  "message": "Not Found",
+  "message": "Not Found"
 }
 ```
 
 ### **4\. Authentication Middleware:**
 
-Implement an Authentication Middleware to authenticate your application. Ensures that only user  and admin can access their own accessible routes.
+Implement an Authentication Middleware to authenticate your application. Ensures that only user and admin can access their own accessible routes.
 
 ```json
 {
   "success": false,
   "statusCode": 401,
-  "message": "You have no access to this route",
+  "message": "You have no access to this route"
 }
 ```
 

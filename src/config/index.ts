@@ -16,18 +16,18 @@ type TConfig = {
 };
 
 const configValidation = z.object({
-  port: z.number().default(5000),
-  nodeEnv: z.enum(['development', 'production']).default('development'),
-  dbUri: z.string().default('mongodb://<hostname>:27017/<database>'),
+  port: z.number(),
+  nodeEnv: z.enum(['development', 'production']),
+  dbUri: z.string(),
   dbHost: z.string(),
   dbName: z.string(),
   dbUser: z.string().optional(),
   dbPass: z.string().optional(),
-  bcryptSaltRounds: z.number().default(12),
+  bcryptSaltRounds: z.number(),
   jwtAccessSecret: z.string(),
-  jwtAccessExpiresIn: z.string().default('15m'),
+  jwtAccessExpiresIn: z.string(),
   jwtRefreshSecret: z.string(),
-  jwtRefreshExpiresIn: z.string().default('7d'),
+  jwtRefreshExpiresIn: z.string(),
 });
 
 const rawConfig = {

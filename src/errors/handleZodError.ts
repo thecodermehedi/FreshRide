@@ -1,6 +1,6 @@
-import type { ZodError, ZodIssue } from "zod";
-import type { TErrorObject, TReturnError } from "./error.types";
-import httpStatus from "http-status";
+import type {ZodError, ZodIssue} from 'zod';
+import type {TErrorObject, TReturnError} from './error.types';
+import httpStatus from 'http-status';
 
 const handleZodError = (err: ZodError): TReturnError => {
   return {

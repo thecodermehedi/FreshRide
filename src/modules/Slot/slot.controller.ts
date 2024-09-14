@@ -1,6 +1,6 @@
 import httpStatus from 'http-status';
-import { catchAsync } from '../../utils';
-import { slotService } from './slot.service';
+import {catchAsync} from '../../utils';
+import {slotService} from './slot.service';
 
 const createSlots = catchAsync(async (req, res) => {
   const result = await slotService.createSlots(req.body);
@@ -12,10 +12,9 @@ const createSlots = catchAsync(async (req, res) => {
   });
 });
 
-
 const getSlots = catchAsync(async (req, res) => {
   const query: Record<string, unknown> = {};
-  const { date, serviceId } = req.query;
+  const {date, serviceId} = req.query;
   if (date) {
     query.date = req.query.date;
   }
@@ -30,7 +29,6 @@ const getSlots = catchAsync(async (req, res) => {
     data: slots,
   });
 });
-
 
 export const slotController = {
   createSlots,

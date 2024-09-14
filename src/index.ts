@@ -1,4 +1,3 @@
-// import cors from 'cors';
 import morgan from 'morgan';
 import http, {Server} from 'http';
 import cookieParser from 'cookie-parser';
@@ -23,7 +22,7 @@ app.get('/', (req, res) => {
     version: '1.0.0',
     description: 'Welcome to the Car Washing Booking System API!',
     author: 'Mehedi Hasan',
-    contact: 'thecodermehedi@gmail.com'
+    contact: 'thecodermehedi@gmail.com',
   };
 
   res.status(200).json(serverInfo);
@@ -42,6 +41,8 @@ app.use(globalErrorHandler);
     dbStringUri = dbUri
       .replace('<username>', config.dbUser || 'notFound')
       .replace('<password>', config.dbPass || 'notFound')
+      .replace('<hostname>', dbHost)
+      .replace('<database>', dbName)
       .replace('<boolean>', 'true')
       .replace('<string>', 'majority');
   }

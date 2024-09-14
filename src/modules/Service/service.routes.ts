@@ -1,10 +1,11 @@
 import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import {createRouter} from '../../utils';
-import { slotController } from '../Slot/slot.controller';
+import {slotController} from '../Slot/slot.controller';
+import {slotValidations} from '../Slot/slot.validator';
 import {USER_ROLE} from '../User/user.constant';
 import {serviceController} from './service.controller';
-import {serviceValidator} from './service.validator';
+import {serviceValidations} from './service.validator';
 
 const router = createRouter();
 
@@ -13,14 +14,19 @@ router.get('/:id', serviceController.getService);
 router.post(
   '/',
   auth(USER_ROLE.ADMIN),
-  validateRequest(serviceValidator.createServiceValidationSchema),
+  validateRequest(serviceValidations.createServiceValidationSchema),
   serviceController.createService,
 );
-router.post('/slots', auth(USER_ROLE.ADMIN), slotController.createSlots);
+router.post(
+  '/slots',
+  auth(USER_ROLE.ADMIN),
+  validateRequest(slotValidations.createSlotValidationSchema),
+  slotController.createSlots,
+);
 router.put(
   '/:id',
   auth(USER_ROLE.ADMIN),
-  validateRequest(serviceValidator.updateServiceValidationSchema),
+  validateRequest(serviceValidations.updateServiceValidationSchema),
   serviceController.updateService,
 );
 router.delete('/:id', auth(USER_ROLE.ADMIN), serviceController.deleteService);

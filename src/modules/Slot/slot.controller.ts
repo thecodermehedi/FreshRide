@@ -17,6 +17,15 @@ const getSlots = catchAsync(async (req, res) => {
     query.service = req.query.serviceId;
   }
   const slots = await slotService.getSlots(query);
+  if (slots.length === 0) {
+    return sendResponse(
+      res,
+      httpStatus.NOT_FOUND,
+      'No Data found',
+      slots,
+      false,
+    );
+  }
   sendResponse(res, httpStatus.OK, 'Slots retrieved successfully', slots);
 });
 

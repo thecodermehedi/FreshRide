@@ -11,9 +11,20 @@ const createService: RequestHandler = catchAsync(async (req, res) => {
 const getServices: RequestHandler = catchAsync(async (req, res) => {
   const services = await serviceService.getServices();
   if (services.length === 0) {
-    return sendResponse(res, httpStatus.NOT_FOUND, 'No Data found', services, false);
+    return sendResponse(
+      res,
+      httpStatus.NOT_FOUND,
+      'No Data found',
+      services,
+      false,
+    );
   }
-  return sendResponse(res, httpStatus.OK, 'Services retrieved successfully', services);
+  return sendResponse(
+    res,
+    httpStatus.OK,
+    'Services retrieved successfully',
+    services,
+  );
 });
 
 const getService: RequestHandler = catchAsync(async (req, res) => {

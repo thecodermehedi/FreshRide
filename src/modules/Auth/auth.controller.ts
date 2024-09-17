@@ -1,5 +1,5 @@
 import type {RequestHandler} from 'express';
-import {catchAsync} from '../../utils';
+import {catchAsync, sendResponse} from '../../utils';
 import {AuthServices} from './auth.service';
 import config from '../../config';
 import httpStatus from 'http-status';
@@ -22,12 +22,7 @@ const login: RequestHandler = catchAsync(async (req, res) => {
 
 const signup: RequestHandler = catchAsync(async (req, res) => {
   const result = await AuthServices.signup(req.body);
-  res.json({
-    success: true,
-    statusCode: httpStatus.OK,
-    message: 'User created successfully',
-    data: result,
-  });
+  sendResponse(res, httpStatus.OK, 'User created successfully', result);
 });
 
 export const AuthControllers = {

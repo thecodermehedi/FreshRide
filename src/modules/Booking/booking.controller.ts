@@ -1,5 +1,5 @@
 import type {RequestHandler} from 'express';
-import {catchAsync} from '../../utils';
+import {catchAsync, sendResponse} from '../../utils';
 import httpStatus from 'http-status';
 import {bookingService} from './booking.service';
 import type {TPayloadUser} from './booking.type';
@@ -9,33 +9,16 @@ const bookService: RequestHandler = catchAsync(async (req, res) => {
     req.body,
     req.user as TPayloadUser,
   );
-  res.json({
-    success: true,
-    statusCode: httpStatus.OK,
-    message: 'Booking successfully',
-    data: booking,
-  });
+  sendResponse(res, httpStatus.OK, 'Booking successfully', booking);
 });
 
 const getBookings: RequestHandler = catchAsync(async (req, res) => {
   const bookings = await bookingService.getBookings(req.user as TPayloadUser);
   if (bookings.length === 0) {
-    return res.json({
-      success: false,
-      statusCode: httpStatus.NOT_FOUND,
-      message: 'No Data found',
-      data: bookings,
-    });
+    return sendResponse(res, httpStatus.NOT_FOUND, 'No Data found', bookings, false);
   }
-  return res.json({
-    success: true,
-    statusCode: httpStatus.OK,
-    message:
-      req.user.role === 'admin'
-        ? 'All bookings retrieved successfully'
-        : 'User bookings retrieved successfully',
-    data: bookings,
-  });
+  const message = req.user.role === 'admin' ? 'All bookings retrieved successfully' : 'User bookings retrieved successfully';
+  return sendResponse(res, httpStatus.OK, message, bookings);
 });
 
 export const bookingController = {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import morgan from 'morgan';
 import http, {Server} from 'http';
 import cookieParser from 'cookie-parser';

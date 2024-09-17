@@ -26,7 +26,7 @@
   "scripts": {
     "setup": "npm i -g bun && bun install",
     "start:prod": "bun --env-file=.env.production src/index.ts",
-    "start:dev": "bun --hot --env-file=.env.development src/index.ts",
+    "start:dev": "bun --env-file=.env.development --hot src/index.ts",
     "lint": "bunx eslint src",
     "format": "bunx prettier --write ."
   },

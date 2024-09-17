@@ -24,4 +24,19 @@ const getCurrentDateTime = () => {
   return `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
 };
 
-export {createRouter, catchAsync, getCurrentDateTime};
+const sendResponse = (
+  res: Response,
+  statusCode: number,
+  message: string,
+  data?: unknown,
+  success: boolean = true,
+) => {
+  res.json({
+    success,
+    statusCode,
+    message,
+    data,
+  });
+};
+
+export {createRouter, catchAsync, getCurrentDateTime, sendResponse};

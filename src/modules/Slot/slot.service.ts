@@ -60,7 +60,7 @@ const getSlots = async ({ date, service }: Record<string, unknown>) => {
       select: '-createdAt -updatedAt -__v',
     });
   }
-  return await SlotModel.find().projection({ __v: 0 }).populate({
+  return await SlotModel.find().select('-__v').populate({
     path: 'service',
     model: 'Service',
     select: '-createdAt -updatedAt -__v',

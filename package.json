@@ -21,13 +21,13 @@
     "url": "git+https://github.com/thecodermehedi/car-washing-booking-system.git"
   },
   "engines": {
-    "node": "20.16.0"
+    "node": "20.17.0"
   },
   "scripts": {
-    "setup": "npm i -g bun && bun install",
-    "start:prod": "bun --env-file=.env.production src/index.ts",
-    "start:dev": "bun --env-file=.env.development --hot src/index.ts",
-    "lint": "bunx eslint src",
+    "install": "bun install",
+    "start": "bun run ./src/index.ts",
+    "dev": "bun --watch --env-file=.env.development run ./src/index.ts",
+    "lint": "bunx eslint . --ext .ts",
     "format": "bunx prettier --write ."
   },
   "dependencies": {
@@ -52,6 +52,7 @@
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
+    "bun": "^1.1.27",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-node": "^11.1.0",

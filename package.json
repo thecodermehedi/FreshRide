@@ -2,32 +2,22 @@
   "name": "freshride",
   "version": "1.0.0",
   "description": "A car wash booking system built with Express, MongoDB, TypeScript, JWT, and bcrypt for a secure, efficient, and user-friendly experience.",
-  "homepage": "https://github.com/thecodermehedi/FreshRide#readme",
-  "bugs": {
-    "url": "https://github.com/thecodermehedi/FreshRide/issues",
-    "email": "thecodermehedi@gmail.com"
-  },
-  "license": "MIT",
   "author": {
     "name": "Mehedi Hasan",
     "email": "thecodermehedi@gmail.com",
     "url": "https://thecodermehedi.me"
   },
-  "module": "src/index.ts",
-  "type": "module",
-  "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thecodermehedi/FreshRide.git"
+    "url": "git+https://github.com/thecodermehedi/freshride.git"
   },
-  "engines": {
-    "node": "20.17.0"
-  },
+  "main": "./dist/index.js",
   "scripts": {
-    "i": "bun install",
-    "start": "bun run ./src/index.ts",
-    "dev": "bun --watch --env-file=.env.development run ./src/index.ts",
-    "lint": "bunx eslint . --ext .ts",
+    "start:prod": "node ./dist/index.js",
+    "start:dev": "node --env-file=.env.production ./dist/index.js",
+    "build": "tsc -p .",
+    "dev": "bun --watch --env-file=.env.development ./src/index.ts",
+    "lint": "bunx eslint src --ignore-pattern .ts",
     "format": "bunx prettier --write ."
   },
   "dependencies": {
@@ -36,7 +26,7 @@
     "express": "^4.21.0",
     "http-status": "^1.7.4",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.6.2",
+    "mongoose": "^8.6.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
@@ -52,16 +42,23 @@
     "@types/node": "^22.5.5",
     "@typescript-eslint/eslint-plugin": "^8.6.0",
     "@typescript-eslint/parser": "^8.6.0",
-    "bun": "^1.1.27",
+    "bun": "^1.1.28",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-node": "^11.1.0",
     "globals": "^15.9.0",
     "morgan": "^1.10.0",
     "prettier": "3.3.3",
+    "typescript": "5.5.4",
     "typescript-eslint": "^8.6.0"
   },
-  "peerDependencies": {
-    "typescript": "^5.6.2"
-  }
+  "engines": {
+    "node": "20.17.0"
+  },
+  "bugs": {
+    "url": "https://github.com/thecodermehedi/freshride/issues",
+    "email": "thecodermehedi@gmail.com"
+  },
+  "homepage": "https://github.com/thecodermehedi/freshride#readme",
+  "license": "MIT"
 }

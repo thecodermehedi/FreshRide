@@ -9,7 +9,7 @@ import prettierConfig from "eslint-config-prettier";
 
 export default [
   {
-    files: ["src/**/*.ts", "src/**/*.tsx"],
+    files: ["src/**/*.ts"],
     languageOptions: {
       globals: globals.node,
       ecmaVersion: "latest",

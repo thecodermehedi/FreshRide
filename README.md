@@ -104,6 +104,6 @@ For Testing API Endpoints, use Postman.
 
 ## License
 
-Copyright © 2023 Mehedi Hasan. All rights reserved.
+Copyright © 2024 Mehedi Hasan. All rights reserved.
 
 This project is licensed under the MIT license.

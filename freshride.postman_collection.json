@@ -1,0 +1,1074 @@
+{
+	"info": {
+		"_postman_id": "922ff25e-48ef-4e2a-95f1-25638ee0ac33",
+		"name": "freshride",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38273098"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login (User)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const token = jsonData.token;\r",
+									"\r",
+									"if (token) {\r",
+									"    pm.environment.set(\"user_token\", token);\r",
+									"    console.log(\"User Access token set successfully\");\r",
+									"} else {\r",
+									"    console.log(\"Token not found in the response\");\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"thecodermehedi@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"thecodermehedi@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZWNvZGVybWVoZWRpQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzI2NTcwODY0LCJleHAiOjE3MjcxNzU2NjR9.J1_m2O_AHFzYezO4WuiOpmyV3Xbsx_22dBVCI8cvaCo; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26a-bdBkjw2WzKcc4WeMs3e5ihpQ8Ko\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 11:01:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "618"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User logged in successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRoZWNvZGVybWVoZWRpQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzI2NTcwODY0LCJleHAiOjE3MjY1NzE3NjR9.1-Tcz9UJcI001JfoU25Zmf_LzzoIP8X-u1EWeb7m0gg\",\n    \"data\": {\n        \"_id\": \"66e926c2382c65b74e37b439\",\n        \"name\": \"Mehedi Hasan\",\n        \"email\": \"thecodermehedi@gmail.com\",\n        \"password\": \"$2b$08$s5dZkLOJ6JUC/Z8WKG7Yuepwhm.okN3FMfNOf9PKL9lsMfOg.0C32\",\n        \"phone\": \"1234567890\",\n        \"role\": \"user\",\n        \"address\": \"12 Sheikhertech, Dhaka, Bangladesh\",\n        \"createdAt\": \"2024-09-17T06:50:42.158Z\",\n        \"updatedAt\": \"2024-09-17T06:50:42.158Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login (Admin)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();\r",
+									"const token = jsonData.token;\r",
+									"\r",
+									"if (token) {\r",
+									"    pm.environment.set(\"admin_token\", token);\r",
+									"    console.log(\"Admin Access token set successfully\");\r",
+									"} else {\r",
+									"    console.log(\"Token not found in the response\");\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"web@programming-hero.com\",\r\n    \"password\": \"ph-password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"web@programming-hero.com\",\r\n    \"password\": \"ph-password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "set-cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndlYkBwcm9ncmFtbWluZy1oZXJvLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyNjU3MDg5MSwiZXhwIjoxNzI3MTc1NjkxfQ.Tu2jahldHw6OPV6mYsDne7xiqUYNJu6w5ol_y1RsDb8; Path=/; HttpOnly"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26d-UeXb/5a0FP+wS202CNN+5SYg51I\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 11:01:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "621"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User logged in successfully\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndlYkBwcm9ncmFtbWluZy1oZXJvLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyNjU3MDg5MSwiZXhwIjoxNzI2NTcxNzkxfQ.UMKk9S_wgO789BwhT54JbXuJ_mP-w9xbxPVC-bSUIfg\",\n    \"data\": {\n        \"_id\": \"66e943290f7f4ceff0d4751e\",\n        \"name\": \"Programming Hero\",\n        \"email\": \"web@programming-hero.com\",\n        \"password\": \"$2b$08$wuHULVYGnq81lTOS/TIrpeBySNXpuB3CW2fCzYQhC5rfSVH/ZJuKC\",\n        \"phone\": \"1234567890\",\n        \"role\": \"admin\",\n        \"address\": \"123 Main Street, City, Country\",\n        \"createdAt\": \"2024-09-17T08:51:53.791Z\",\n        \"updatedAt\": \"2024-09-17T08:51:53.791Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"name\": \"Programming Hero\",\r\n//     \"email\": \"web@programming-hero.com\",\r\n//     \"password\": \"ph-password\",\r\n//     \"phone\": \"1234567890\",\r\n//     \"role\": \"admin\",\r\n//     \"address\": \"123 Main Street, City, Country\"\r\n// }\r\n// {\r\n//     \"name\": \"Mehedi Hasan\",\r\n//     \"email\": \"thecodermehedi@gmail.com\",\r\n//     \"password\": \"123456\",\r\n//     \"phone\": \"1234567890\",\r\n//     \"role\": \"user\",\r\n//     \"address\": \"12 Sheikhertech, Dhaka, Bangladesh\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Programming Hero\",\r\n    \"email\": \"web@programming-hero.com\",\r\n    \"password\": \"ph-password\",\r\n    \"phone\": \"1234567890\",\r\n    \"role\": \"admin\",\r\n    \"address\": \"123 Main Street, City, Country\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19d-Y/xw2MqdaT7twagWFFXWvh7PovY\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 04:14:15 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "413"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Programming Hero\",\n        \"email\": \"web@programming-hero.com\",\n        \"password\": \"$2b$12$pcOSmN2KaxmG9CcimtmsPuhWo1JQyUF9XoLrG5RrFR31gaVRocmLm\",\n        \"phone\": \"1234567890\",\n        \"role\": \"admin\",\n        \"address\": \"123 Main Street, City, Country\",\n        \"_id\": \"66dfc798d323e16e7c2e8675\",\n        \"createdAt\": \"2024-09-10T04:14:16.069Z\",\n        \"updatedAt\": \"2024-09-10T04:14:16.069Z\",\n        \"__v\": 0\n    }\n}"
+						},
+						{
+							"name": "User Register Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Mehedi Hasan\",\r\n    \"email\": \"thecodermehedi@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"1234567890\",\r\n    \"role\": \"user\",\r\n    \"address\": \"12 Sheikhertech, Dhaka, Bangladesh\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19c-M5QDPGRntqxb0OQsvmmEFmFg0Rc\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 10 Sep 2024 04:14:41 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "412"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"Mehedi Hasan\",\n        \"email\": \"thecodermehedi@gmail.com\",\n        \"password\": \"$2b$12$zXEm7LsHzJ73RRiiSDU8SuxoHL2P9UxfZHAeAHWkDxz1UoIaVlNHe\",\n        \"phone\": \"1234567890\",\n        \"role\": \"user\",\n        \"address\": \"12 Sheikhertech, Dhaka, Bangladesh\",\n        \"_id\": \"66dfc7b1d323e16e7c2e8678\",\n        \"createdAt\": \"2024-09-10T04:14:41.637Z\",\n        \"updatedAt\": \"2024-09-10T04:14:41.637Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Create Service (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"name\": \"Car Wash\",\r\n//     \"description\": \"Professional car washing service\",\r\n//     \"price\": 50,\r\n//     \"duration\": 60,\r\n//     \"isDeleted\": false\r\n// }\r\n// {\r\n//     \"name\": \"Interior Cleaning\",\r\n//     \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\r\n//     \"price\": 30,\r\n//     \"duration\": 45,\r\n//     \"isDeleted\": false\r\n// }\r\n{\r\n    \"name\": \"Exterior Waxing\",\r\n    \"description\": \"Application of high-quality wax to protect and shine the car's exterior\",\r\n    \"price\": 70,\r\n    \"duration\": 90,\r\n    \"isDeleted\": false\r\n}\r\n// {\r\n//     \"name\": \"Engine Detailing\",\r\n//     \"description\": \"Deep cleaning of the car's engine bay\",\r\n//     \"price\": 100,\r\n//     \"duration\": 120,\r\n//     \"isDeleted\": false\r\n// }\r\n// {\r\n//     \"name\": \"Tire Cleaning\",\r\n//     \"description\": \"Cleaning and shining of tires and rims\",\r\n//     \"price\": 20,\r\n//     \"duration\": 30,\r\n//     \"isDeleted\": false\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/services",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Service By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services/66e9767f561bf7b77a233ea4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services",
+								"66e9767f561bf7b77a233ea4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service By Id (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"duration\": 60 // You can include any attribute(s) of the service collection that you want to update, one or more.\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/services/66e9435b0f7f4ceff0d47523",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services",
+								"66e9435b0f7f4ceff0d47523"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service By Id (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services/66e475597db406346b2b375d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services",
+								"66e475597db406346b2b375d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Slots",
+			"item": [
+				{
+					"name": "Create Slot (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\": \"66e962660c612614d4a067c1\",\r\n    \"date\": \"2024-06-15\",\r\n    \"startTime\": \"10:00\",\r\n    \"endTime\": \"21:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/services/slots",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services",
+								"slots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Slots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "date",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "serviceId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/slots/availability",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"slots",
+								"availability"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Available Slots Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "date",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "serviceId",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/slots/availability",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"slots",
+										"availability"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a3e-nu6pVSa1GdxA9rEWulP5QPFwdVo\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 13:04:02 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6718"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Slots retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47534\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"09:00\",\n            \"endTime\": \"10:20\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.048Z\",\n            \"updatedAt\": \"2024-09-17T12:41:11.763Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47536\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:20\",\n            \"endTime\": \"11:40\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.058Z\",\n            \"updatedAt\": \"2024-09-17T11:06:55.271Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47538\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:40\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.065Z\",\n            \"updatedAt\": \"2024-09-17T10:52:59.123Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e4\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:00\",\n            \"endTime\": \"10:45\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T11:14:04.310Z\",\n            \"updatedAt\": \"2024-09-17T11:16:55.781Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e6\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:45\",\n            \"endTime\": \"11:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.328Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.328Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e8\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:30\",\n            \"endTime\": \"12:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.340Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.340Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ea\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"12:15\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.346Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.346Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ec\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"13:00\",\n            \"endTime\": \"13:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.353Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.353Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ee\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"13:45\",\n            \"endTime\": \"14:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.359Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.359Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f0\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"14:30\",\n            \"endTime\": \"15:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.366Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.366Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f2\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"15:15\",\n            \"endTime\": \"16:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.372Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.372Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f4\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"16:00\",\n            \"endTime\": \"16:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.377Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.377Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f6\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"16:45\",\n            \"endTime\": \"17:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.382Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.382Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f8\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"17:30\",\n            \"endTime\": \"18:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.388Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.388Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fa\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"18:15\",\n            \"endTime\": \"19:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.393Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.393Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fc\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"19:00\",\n            \"endTime\": \"19:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.399Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.399Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fe\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"19:45\",\n            \"endTime\": \"20:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.405Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.405Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Available Slots By ServiceId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "date",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "serviceId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/slots/availability?serviceId=66e9435b0f7f4ceff0d47523",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"slots",
+								"availability"
+							],
+							"query": [
+								{
+									"key": "serviceId",
+									"value": "66e9435b0f7f4ceff0d47523"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Available Slots By ServiceId Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "date",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "serviceId",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/slots/availability?serviceId=66e9435b0f7f4ceff0d47523",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"slots",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "serviceId",
+											"value": "66e9435b0f7f4ceff0d47523"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"461-6WnKNnxyXhDIAO/U0geLHzPMxBg\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 13:05:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1121"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Slots retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47534\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"09:00\",\n            \"endTime\": \"10:20\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.048Z\",\n            \"updatedAt\": \"2024-09-17T12:41:11.763Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47536\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:20\",\n            \"endTime\": \"11:40\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.058Z\",\n            \"updatedAt\": \"2024-09-17T11:06:55.271Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47538\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:40\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.065Z\",\n            \"updatedAt\": \"2024-09-17T10:52:59.123Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Available Slots By Date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "date",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "serviceId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/slots/availability?date=2024-06-15",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"slots",
+								"availability"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2024-06-15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Available Slots By Date Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "date",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "serviceId",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/slots/availability?date=2024-06-15",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"slots",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2024-06-15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a3e-nu6pVSa1GdxA9rEWulP5QPFwdVo\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 13:05:29 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6718"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Slots retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47534\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"09:00\",\n            \"endTime\": \"10:20\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.048Z\",\n            \"updatedAt\": \"2024-09-17T12:41:11.763Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47536\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:20\",\n            \"endTime\": \"11:40\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.058Z\",\n            \"updatedAt\": \"2024-09-17T11:06:55.271Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47538\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:40\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.065Z\",\n            \"updatedAt\": \"2024-09-17T10:52:59.123Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e4\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:00\",\n            \"endTime\": \"10:45\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T11:14:04.310Z\",\n            \"updatedAt\": \"2024-09-17T11:16:55.781Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e6\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:45\",\n            \"endTime\": \"11:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.328Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.328Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165e8\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:30\",\n            \"endTime\": \"12:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.340Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.340Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ea\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"12:15\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.346Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.346Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ec\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"13:00\",\n            \"endTime\": \"13:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.353Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.353Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165ee\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"13:45\",\n            \"endTime\": \"14:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.359Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.359Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f0\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"14:30\",\n            \"endTime\": \"15:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.366Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.366Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f2\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"15:15\",\n            \"endTime\": \"16:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.372Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.372Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f4\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"16:00\",\n            \"endTime\": \"16:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.377Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.377Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f6\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"16:45\",\n            \"endTime\": \"17:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.382Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.382Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165f8\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"17:30\",\n            \"endTime\": \"18:15\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.388Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.388Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fa\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"18:15\",\n            \"endTime\": \"19:00\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.393Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.393Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fc\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"19:00\",\n            \"endTime\": \"19:45\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.399Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.399Z\"\n        },\n        {\n            \"_id\": \"66e9647cf1199214572165fe\",\n            \"service\": {\n                \"_id\": \"66e962660c612614d4a067c1\",\n                \"name\": \"Interior Cleaning\",\n                \"description\": \"Thorough cleaning of car interiors including seats, carpets, and dashboard\",\n                \"price\": 30,\n                \"duration\": 45,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"19:45\",\n            \"endTime\": \"20:30\",\n            \"isBooked\": \"available\",\n            \"createdAt\": \"2024-09-17T11:14:04.405Z\",\n            \"updatedAt\": \"2024-09-17T11:14:04.405Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Available Slots By Date and ServiceId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "date",
+								"value": "",
+								"type": "text"
+							},
+							{
+								"key": "serviceId",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/slots/availability?date=2024-06-15&serviceId=66e9435b0f7f4ceff0d47523",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"slots",
+								"availability"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2024-06-15"
+								},
+								{
+									"key": "serviceId",
+									"value": "66e9435b0f7f4ceff0d47523"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "date",
+										"value": "",
+										"type": "text"
+									},
+									{
+										"key": "serviceId",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/slots/availability?date=2024-06-15&serviceId=66e9435b0f7f4ceff0d47523",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"slots",
+										"availability"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2024-06-15"
+										},
+										{
+											"key": "serviceId",
+											"value": "66e9435b0f7f4ceff0d47523"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"461-6WnKNnxyXhDIAO/U0geLHzPMxBg\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 13:07:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1121"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Slots retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47534\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"09:00\",\n            \"endTime\": \"10:20\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.048Z\",\n            \"updatedAt\": \"2024-09-17T12:41:11.763Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47536\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"10:20\",\n            \"endTime\": \"11:40\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.058Z\",\n            \"updatedAt\": \"2024-09-17T11:06:55.271Z\"\n        },\n        {\n            \"_id\": \"66e943b10f7f4ceff0d47538\",\n            \"service\": {\n                \"_id\": \"66e9435b0f7f4ceff0d47523\",\n                \"name\": \"Car Wash\",\n                \"description\": \"Professional car washing service\",\n                \"price\": 50,\n                \"duration\": 60,\n                \"isDeleted\": false\n            },\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"11:40\",\n            \"endTime\": \"13:00\",\n            \"isBooked\": \"booked\",\n            \"createdAt\": \"2024-09-17T08:54:09.065Z\",\n            \"updatedAt\": \"2024-09-17T10:52:59.123Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Book a Service (Only User)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceId\": \"66e9435b0f7f4ceff0d47523\",\r\n    \"slotId\": \"66e943b10f7f4ceff0d47534\",\r\n    \"vehicleType\": \"car\",\r\n    \"vehicleBrand\": \"Toyota\",\r\n    \"vehicleModel\": \"Camry\",\r\n    \"manufacturingYear\": 2020,\r\n    \"registrationPlate\": \"ABC123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book a Service (Response)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"serviceId\": \"66e9435b0f7f4ceff0d47523\",\r\n    \"slotId\": \"66e943b10f7f4ceff0d47534\",\r\n    \"vehicleType\": \"car\",\r\n    \"vehicleBrand\": \"Toyota\",\r\n    \"vehicleModel\": \"Camry\",\r\n    \"manufacturingYear\": 2020,\r\n    \"registrationPlate\": \"ABC123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bookings",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"318-k1w1oNodndTknNQ/fPl3L5B1qLk\""
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 17 Sep 2024 12:41:11 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "792"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"statusCode\": 200,\n    \"message\": \"Booking successful\",\n    \"data\": {\n        \"_id\": \"66e978e7ae07d5f393d8e926\",\n        \"customer\": {\n            \"_id\": \"66e926c2382c65b74e37b439\",\n            \"name\": \"Mehedi Hasan\",\n            \"email\": \"thecodermehedi@gmail.com\",\n            \"phone\": \"1234567890\",\n            \"address\": \"12 Sheikhertech, Dhaka, Bangladesh\"\n        },\n        \"serviceId\": {\n            \"_id\": \"66e9435b0f7f4ceff0d47523\",\n            \"name\": \"Car Wash\",\n            \"description\": \"Professional car washing service\",\n            \"price\": 50,\n            \"duration\": 60,\n            \"isDeleted\": false\n        },\n        \"slotId\": {\n            \"_id\": \"66e943b10f7f4ceff0d47534\",\n            \"service\": \"66e9435b0f7f4ceff0d47523\",\n            \"date\": \"2024-06-15\",\n            \"startTime\": \"09:00\",\n            \"endTime\": \"10:20\",\n            \"isBooked\": \"booked\"\n        },\n        \"vehicleType\": \"car\",\n        \"vehicleBrand\": \"Toyota\",\n        \"vehicleModel\": \"Camry\",\n        \"manufacturingYear\": 2020,\n        \"registrationPlate\": \"ABC123\",\n        \"createdAt\": \"2024-09-17T12:41:11.745Z\",\n        \"updatedAt\": \"2024-09-17T12:41:11.745Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Bookings (Only Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookings ( Only User )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{user_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/my-bookings",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"my-bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

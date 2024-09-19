@@ -1,10 +1,10 @@
 {
-  "name": "car-washing-booking-system",
+  "name": "freshride",
   "version": "1.0.0",
-  "description": "Car Wash Booking System Backend built with Typescript, Express, Mongoose",
-  "homepage": "https://github.com/thecodermehedi/car-washing-booking-system#readme",
+  "description": "A car wash booking system built with Express, MongoDB, TypeScript, JWT, and bcrypt for a secure, efficient, and user-friendly experience.",
+  "homepage": "https://github.com/thecodermehedi/FreshRide#readme",
   "bugs": {
-    "url": "https://github.com/thecodermehedi/car-washing-booking-system/issues",
+    "url": "https://github.com/thecodermehedi/FreshRide/issues",
     "email": "thecodermehedi@gmail.com"
   },
   "license": "MIT",
@@ -18,13 +18,13 @@
   "main": "build/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thecodermehedi/car-washing-booking-system.git"
+    "url": "git+https://github.com/thecodermehedi/FreshRide.git"
   },
   "engines": {
     "node": "20.17.0"
   },
   "scripts": {
-    "install": "bun install",
+    "i": "bun install",
     "start": "bun run ./src/index.ts",
     "dev": "bun --watch --env-file=.env.development run ./src/index.ts",
     "lint": "bunx eslint . --ext .ts",

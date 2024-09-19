@@ -12,6 +12,8 @@
     "url": "git+https://github.com/thecodermehedi/freshride.git"
   },
   "main": "./dist/index.js",
+  "module": "./src/index.ts",
+  "type": "commonjs",
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "tsc -p .",

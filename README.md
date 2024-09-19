@@ -85,15 +85,17 @@ You can use the application by following the script in [package.json](package.js
 
 This ensures that Bun executes the scripts as defined in your `package.json`.
 
-- **Install Dependencies:** `bun run i`
+- **Install Dependencies:** `bun i`
 
-- **Start Application:** `bun run start`
+- **Build Application:** `bun run build`
 
-- **Start in Development Mode:** `bun run dev`
+- **Start Application:** `bun start` (provide .env.production as an argument)
 
-- **Lint Code:** `bun run lint`
+- **Start in Development Mode:** `bun dev`
 
-- **Format Code:** `bun run format`
+- **Lint Code:** `bun lint`
+
+- **Format Code:** `bun format`
 
 ## API Testing
 

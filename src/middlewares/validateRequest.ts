@@ -3,7 +3,7 @@ import type {AnyZodObject} from 'zod';
 import {catchAsync} from '../utils';
 
 const validateRequest = (schema: AnyZodObject): RequestHandler => {
-  return catchAsync(async (req, res, next) => {
+  return catchAsync(async (req, _res, next) => {
     await schema.parseAsync({
       body: req.body,
       cookies: req.cookies,

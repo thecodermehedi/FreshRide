@@ -8,7 +8,7 @@ const createService: RequestHandler = catchAsync(async (req, res) => {
   sendResponse(res, httpStatus.OK, 'Service created successfully', service);
 });
 
-const getServices: RequestHandler = catchAsync(async (req, res) => {
+const getServices: RequestHandler = catchAsync(async (_req, res) => {
   const services = await serviceService.getServices();
   if (services.length === 0) {
     return sendResponse(

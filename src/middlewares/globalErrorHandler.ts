@@ -14,7 +14,7 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
   let errorCode: number = httpStatus.INTERNAL_SERVER_ERROR;
   let errorMessage: string = 'Something went wrong';
   let errorDetails: Array<TErrorObject> = [
-  {path: '', message: 'Something went wrong'},
+    {path: '', message: 'Something went wrong'},
   ];
 
   if (err instanceof ZodError) {

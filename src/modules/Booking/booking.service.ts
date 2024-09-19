@@ -3,11 +3,11 @@ import httpStatus from 'http-status';
 import AppError from '../../errors/AppError';
 import ServiceModel from '../Service/service.model';
 import UserModel from '../User/user.model';
-import type { TBooking } from './booking.type';
+import type {TBooking} from './booking.type';
 import mongoose from 'mongoose';
 import BookingModel from './booking.model';
 import SlotModel from '../Slot/slot.model';
-import type { JwtPayload } from 'jsonwebtoken';
+import type {JwtPayload} from 'jsonwebtoken';
 
 const bookService = async (bookingData: TBooking, bookingUser: JwtPayload) => {
   const customer = await UserModel.findOne({
@@ -39,11 +39,17 @@ const bookService = async (bookingData: TBooking, bookingUser: JwtPayload) => {
   bookingSession.startTransaction();
 
   try {
-    const newBookingData = { ...bookingData, customer: customer._id };
-    const [booking] = await BookingModel.create([newBookingData], { session: bookingSession });
-    await slot.updateOne({ isBooked: 'booked' }, { session: bookingSession });
+    const newBookingData = {...bookingData, customer: customer._id};
+    const [booking] = await BookingModel.create([newBookingData], {
+      session: bookingSession,
+    });
+    await slot.updateOne({isBooked: 'booked'}, {session: bookingSession});
     const result = await BookingModel.findById(booking._id, '-__v')
-      .populate({ path: 'customer', model: 'User', select: '-role -createdAt -updatedAt -__v' })
+      .populate({
+        path: 'customer',
+        model: 'User',
+        select: '-role -createdAt -updatedAt -__v',
+      })
       .populate({
         path: 'serviceId',
         select: '-createdAt -updatedAt -__v',
@@ -59,7 +65,8 @@ const bookService = async (bookingData: TBooking, bookingUser: JwtPayload) => {
   } catch (error: any) {
     await bookingSession.abortTransaction();
     throw new AppError(
-      httpStatus.INTERNAL_SERVER_ERROR, error.message,
+      httpStatus.INTERNAL_SERVER_ERROR,
+      error.message,
       'An error occurred while booking a slot',
     );
   } finally {
@@ -78,8 +85,13 @@ const getBookings = async (bookingUser: JwtPayload) => {
     }
 
     if (bookingUser.role === 'admin') {
-      return await BookingModel.find().select('-__v')
-        .populate({ path: 'customer', model: 'User', select: '-role -createdAt -updatedAt -__v' })
+      return await BookingModel.find()
+        .select('-__v')
+        .populate({
+          path: 'customer',
+          model: 'User',
+          select: '-role -createdAt -updatedAt -__v',
+        })
         .populate({
           path: 'serviceId',
           select: '-createdAt -updatedAt -__v',
@@ -87,11 +99,15 @@ const getBookings = async (bookingUser: JwtPayload) => {
         .populate({
           path: 'slotId',
           select: '-createdAt -updatedAt -__v',
-        })
+        });
     } else {
-      return await BookingModel.find({ customer: customer._id }, {
-        customer: 0, __v: 0,
-      })
+      return await BookingModel.find(
+        {customer: customer._id},
+        {
+          customer: 0,
+          __v: 0,
+        },
+      )
         .populate({
           path: 'serviceId',
           select: '-createdAt -updatedAt -__v',
@@ -99,7 +115,7 @@ const getBookings = async (bookingUser: JwtPayload) => {
         .populate({
           path: 'slotId',
           select: '-createdAt -updatedAt -__v',
-        })
+        });
     }
   } catch (error: any) {
     throw new AppError(

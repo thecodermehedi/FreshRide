@@ -1,11 +1,11 @@
-import type { RequestHandler } from 'express';
-import { catchAsync, sendResponse } from '../../utils';
+import type {RequestHandler} from 'express';
+import {catchAsync, sendResponse} from '../../utils';
 import httpStatus from 'http-status';
-import { bookingService } from './booking.service';
+import {bookingService} from './booking.service';
 
 const bookService: RequestHandler = catchAsync(async (req, res) => {
   const booking = await bookingService.bookService(req.body, req.user);
-  sendResponse(res, httpStatus.OK, "Booking successful", booking);
+  sendResponse(res, httpStatus.OK, 'Booking successful', booking);
 });
 
 const getBookings: RequestHandler = catchAsync(async (req, res) => {

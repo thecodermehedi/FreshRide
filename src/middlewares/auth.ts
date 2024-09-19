@@ -7,7 +7,7 @@ import {catchAsync} from '../utils';
 import httpStatus from 'http-status';
 
 const auth = (...requiredRoles: Array<TUserRole>) =>
-  catchAsync(async (req, res, next) => {
+  catchAsync(async (req, _res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) {
       throw new AppError(

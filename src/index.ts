@@ -1,15 +1,15 @@
 /* eslint-disable no-console */
 import morgan from 'morgan';
-import http, {Server} from 'http';
+import http, { Server } from 'http';
 import cookieParser from 'cookie-parser';
-import express, {type Application} from 'express';
+import express, { type Application } from 'express';
 import config from './config';
 import mongoose from 'mongoose';
 import router from './routes';
 import notFound from './middlewares/notFound';
 import globalErrorHandler from './middlewares/globalErrorHandler';
 
-export const {dbUri, dbHost, dbName, nodeEnv, port} = config;
+export const { dbUri, dbHost, dbName, nodeEnv, port } = config;
 export const app: Application = express();
 export const server: Server = http.createServer(app);
 
@@ -17,11 +17,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(morgan('dev'));
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
   const serverInfo = {
-    name: 'Car Washing Booking System',
+    name: 'FreshRide API',
     version: '1.0.0',
-    description: 'Welcome to the Car Washing Booking System API!',
+    description: 'Welcome to the FreshRide (Car Washing Booking System) API!',
     author: 'Mehedi Hasan',
     contact: 'thecodermehedi@gmail.com',
   };
@@ -51,6 +51,7 @@ app.use(globalErrorHandler);
   try {
     if (dbStringUri) {
       console.log('🟡 Connecting...');
+      console.log(dbStringUri);
       await mongoose.connect(dbStringUri);
       console.log(
         nodeEnv !== 'production'
